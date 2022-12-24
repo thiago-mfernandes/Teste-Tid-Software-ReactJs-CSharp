@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "nome": "Dashboard"
+    },
+    {
+        "id": 2,
+        "nome": "Agendamentos"
+    },
+    {
+        "id": 3,
+        "nome": "Clientes"
+    },
+    {
+        "id": 4,
+        "nome": "Finanças"
+    },
+    {
+        "id": 5,
+        "nome": "Relatórios"
+    },
+    {
+        "id": 6,
+        "nome": "Configurações"
+    }
+]
