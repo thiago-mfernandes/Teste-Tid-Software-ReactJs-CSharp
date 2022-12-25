@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { MenuUsuario } from '../MenuUsuario';
 
 export function Menu() {
-	const [menuIsVisible, setMenuIsVisible] = useState(true);
+	const [menuIsVisible, setMenuIsVisible] = useState(false);
 
 	function showMenu() {
 		setMenuIsVisible(!menuIsVisible);

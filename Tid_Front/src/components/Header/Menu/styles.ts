@@ -10,7 +10,7 @@ export const Container = styled.div<MenuProps>`
 	padding: 1rem;
 	border-radius: 0 0 24px 24px;
 	box-shadow: 0px 8px 8px rgba(109, 108, 108, 0.08);
-	background-color: ${(props) => props.theme["azul-25"]};
+	background-color: ${(props) => props.theme["azul-claro"]};
 	width: 100%;
 	height: 8rem;
 	overflow: hidden;

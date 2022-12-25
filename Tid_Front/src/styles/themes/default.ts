@@ -5,6 +5,7 @@ export const defaultTheme = {
   roxo: '#5E60CE',
 
   azul: '#4EA8DE',
+  'azul-claro': '#e3f2fd',
   'azul-25': 'rgba(78,168,222,25%)',
 
   verde: '#04D361',
