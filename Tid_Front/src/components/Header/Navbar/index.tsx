@@ -36,7 +36,7 @@ export function Navbar({menuIsVisible, onUserClick}: NavBarProps) {
 					<li key={item.id}>
 						{handleIcon(item.nome)}
 						<Link 
-              to={"/Clientes"}
+              to={`/${item.nome}`}
               onClick={() => onUserClick(false)}
             >{item.nome}
             </Link>

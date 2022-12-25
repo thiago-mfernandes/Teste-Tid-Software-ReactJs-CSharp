@@ -17,4 +17,10 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
     color: ${(props) => props.theme['cinza-fontes']}
   }
+
+  button {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 `

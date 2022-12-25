@@ -31,6 +31,6 @@ export const CardIndicador = styled.div`
 	}
 
 	svg {
-		color: ${(props) => props.theme["cinza-fontes"]};
+		color: ${(props) => props.theme.roxo};
 	}
 `
