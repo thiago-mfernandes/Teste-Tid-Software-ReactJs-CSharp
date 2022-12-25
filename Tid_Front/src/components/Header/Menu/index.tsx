@@ -25,7 +25,7 @@ export function Menu() {
 
 			{menuIsVisible && 
 			<>
-				<Navbar menuIsVisible={menuIsVisible} />
+				<Navbar menuIsVisible={menuIsVisible} onUserClick={setMenuIsVisible}/>
 				<MenuUsuario menuIsVisible={menuIsVisible} />			
 			</>
 			}

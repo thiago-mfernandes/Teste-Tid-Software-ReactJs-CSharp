@@ -8,9 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    //background: ;
-    //color: ;
-    -webkit-font-smoothing: antialiased;
+    background-color: ${(props) => props.theme.bgApp};    -webkit-font-smoothing: antialiased;
   }
 
   body, input, textarea, button, a {

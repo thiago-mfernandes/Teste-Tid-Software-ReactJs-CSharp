@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "icon": "totalClientes",
+        "titulo": "Total de Clientes"
+    },
+    {
+        "id": 2,
+        "icon": "filiados",
+        "titulo": "Filiados"
+    },
+    {
+        "id": 3,
+        "icon": "novos",
+        "titulo": "Novos"
+    },
+    {
+        "id": 4,
+        "icon": "inativos",
+        "titulo": "Inativos"
+    }
+]

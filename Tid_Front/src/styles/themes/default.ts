@@ -1,5 +1,5 @@
 export const defaultTheme = {
-  white: 'fff',
+  white: '#fff',
 
   bgApp: '#F1F2F5',
   roxo: '#5E60CE',
@@ -15,7 +15,9 @@ export const defaultTheme = {
   'cinza-Destaque': '#6474747',
   'cinza-Tabela': '#DDDEE1',
 
-  'cinza-linha': '#d9d9d9'
+  'cinza-linha': '#d9d9d9',
+
+  'cinza-escuro': '#474747' ,
 
   // nome da cor entre aspas caso ocorra variação de luminosidade -->>
   // 'gray-100': '#E1E1E6',

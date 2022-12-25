@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom";
 import { NavContainer } from "./styles";
 import { Gauge, CalendarCheck, UserPlus, Bank, ChartLineUp, Gear, CircleNotch } from 'phosphor-react';
 import data from '../../../data/navbar.json';
 
 interface NavBarProps {
-	menuIsVisible: boolean
+	menuIsVisible: boolean,
+  onUserClick: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export function Navbar({menuIsVisible}: NavBarProps) {
+export function Navbar({menuIsVisible, onUserClick}: NavBarProps) {
 
 	function handleIcon(iconName:string) {
     switch (iconName) {
@@ -33,7 +35,11 @@ export function Navbar({menuIsVisible}: NavBarProps) {
 				{data.map((item) => (
 					<li key={item.id}>
 						{handleIcon(item.nome)}
-						<a href="#">{item.nome}</a>
+						<Link 
+              to={"/Clientes"}
+              onClick={() => onUserClick(false)}
+            >{item.nome}
+            </Link>
 					</li>
 				))}
 			</ul>
