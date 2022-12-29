@@ -1,11 +1,11 @@
 import { UserPlus } from "phosphor-react";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { Context } from "../../Context";
-import { Acoes } from "./Acoes";
+import { Context } from "../../../Context";
+import { AcoesClientes } from "./AcoesClientes";
 import { ContainerSection, ContainerTabela } from "./styles";
 
-export function Tabela() {
+export function TabelaClientes() {
 
 	const { clientes } = useContext(Context);
 	const[busca, setBusca] = useState("");
@@ -42,7 +42,7 @@ export function Tabela() {
             onChange={(e) => setBusca(e.target.value)}
           />
 
-			<ContainerTabela>
+			<ContainerTabela variant={busca}>
           <thead>
             <tr>
               <th>Nome</th>
@@ -71,7 +71,7 @@ export function Tabela() {
 									<td data-label="Preço:">R$150</td>
 									{/**Em um projeto concluido, o modulo de agendamento alimentaria a quantidade de visitas realizadas pelo cliente. */}
 									<td data-label="Visitas:">{gerarNumeroDeVisitasAleatoriamente(1, 50)}</td>
-									<Acoes idCliente={cliente.id} cliente={cliente} />
+									<AcoesClientes idCliente={cliente.id} cliente={cliente} />
 								</tr>
 							))
 						}						

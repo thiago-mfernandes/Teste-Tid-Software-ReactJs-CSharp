@@ -6,7 +6,7 @@
       "cpf": "12345678900",
       "genero": "Masculino",
       "telefone": "1999999999",
-      "planoId": "2",
+      "planoId": "1",
       "id": 1,
       "ultima_visita": "2022-12-29"
     },
@@ -15,7 +15,7 @@
       "Ultima_visita": "2022-12-06",
       "cpf": "12345678896",
       "genero": "Feminino",
-      "telefone": "19999999999",
+      "telefone": "19983203063",
       "planoId": "2",
       "id": 2,
       "ultima_visita": "2022-12-06"
@@ -26,20 +26,45 @@
       "cpf": "78912346500",
       "genero": "Feminino",
       "telefone": "1999999999",
-      "planoId": "4",
-      "id": 4
+      "planoId": "2",
+      "id": 4,
+      "ultima_visita": "2022-12-15"
+    },
+    {
+      "nome": "Josefina",
+      "Ultima_visita": "2022-12-20",
+      "cpf": "45679812298",
+      "genero": "Feminino",
+      "telefone": "19999999999",
+      "planoId": "1",
+      "id": 5,
+      "ultima_visita": "2022-12-06"
+    },
+    {
+      "nome": "Marcos",
+      "Ultima_visita": "2022-12-29",
+      "cpf": "45678912300",
+      "genero": "Masculino",
+      "telefone": "19983824466",
+      "planoId": "1",
+      "id": 6
     }
   ],
   "Plano": [
     {
-      "filiacao": "Golden",
-      "preco": "150",
-      "id": 1
-    },
-    {
       "filiacao": "Silver",
       "preco": "80",
       "id": 2
+    },
+    {
+      "filiacao": "Golden",
+      "preco": "150",
+      "id": 3
+    },
+    {
+      "filiacao": "Light",
+      "preco": "50",
+      "id": 4
     }
   ]
 }

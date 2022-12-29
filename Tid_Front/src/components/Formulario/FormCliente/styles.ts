@@ -3,6 +3,11 @@ import styled from "styled-components";
 export const ContainerForm = styled.form`
   display: flex;
   flex-direction: column;
+  margin: 9rem 1.25rem 2rem;
+  padding: 1.25rem;
+  background-color: ${(props) => props.theme.white};
+	border-radius: 8px;
+  
 
   button {
     background-color: ${(props) => props.theme.roxo};
@@ -63,7 +68,7 @@ export const ContainerTipoLista = styled(ContainerInput)`
     border: 1px solid ${(props) => props.theme.bgApp};
     border-radius: 8px;
     height: 2rem;
-    color: ${(props) => props.theme["cinza-fontes"]};
+    color: ${(props) => props.theme["cinza-Fontes"]};
     padding: 4px 8px 8px;
     outline: none;
 

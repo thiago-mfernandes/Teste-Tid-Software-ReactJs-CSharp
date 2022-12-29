@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { NavContainer } from "./styles";
-import { Gauge, CalendarCheck, UserPlus, Bank, ChartLineUp, Gear, CircleNotch } from 'phosphor-react';
+import { Gauge, CalendarCheck, UserPlus, Bank, ChartLineUp, Gear, CircleNotch, Medal } from 'phosphor-react';
 import data from '../../../data/navbar.json';
 
 interface NavBarProps {
@@ -18,7 +18,9 @@ export function Navbar({menuIsVisible, onUserClick}: NavBarProps) {
       return <CalendarCheck size={24} />;
     case 'Clientes':
       return <UserPlus size={24} />;
-			case 'Finanças':
+    case 'Planos':
+      return <Medal size={24} />;
+    case 'Finanças':
       return <Bank size={24} />;
     case 'Relatórios':
       return <ChartLineUp size={24} />;

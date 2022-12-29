@@ -13,14 +13,18 @@
     },
     {
         "id": 4,
-        "nome": "Finanças"
+        "nome": "Planos"
     },
     {
         "id": 5,
-        "nome": "Relatórios"
+        "nome": "Finanças"
     },
     {
         "id": 6,
+        "nome": "Relatórios"
+    },
+    {
+        "id": 7,
         "nome": "Configurações"
     }
 ]

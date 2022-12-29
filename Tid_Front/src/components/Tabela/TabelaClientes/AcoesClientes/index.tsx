@@ -1,8 +1,8 @@
 import { PencilSimpleLine, Phone, TrashSimple } from "phosphor-react";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { Context } from "../../../Context";
-import { Cliente } from "../../../types/interfaces";
+import { Context } from "../../../../Context";
+import { Cliente } from "../../../../types/interfaces";
 import { ContainerTD } from "./styles";
 
 interface BotoesAcaoProps {
@@ -11,9 +11,9 @@ interface BotoesAcaoProps {
 	cliente: Cliente;
 }
 
-export function Acoes({idCliente, cliente}: BotoesAcaoProps) {
+export function AcoesClientes({idCliente, cliente}: BotoesAcaoProps) {
 
-	const { deletarCliente } = useContext(Context);
+	const { mostrarModal } = useContext(Context);
 
 	let navigate = useNavigate();
 
@@ -21,7 +21,7 @@ export function Acoes({idCliente, cliente}: BotoesAcaoProps) {
 		<ContainerTD data-label="Ações:">
 			<div>
 				<button>
-					<a href=" https://wa.me/5519984009105" target="_blank">
+					<a href={`https://wa.me/${cliente.telefone}`} target="_blank">
 						<Phone
 							size={18}
 							color={'#fff'}
@@ -38,7 +38,7 @@ export function Acoes({idCliente, cliente}: BotoesAcaoProps) {
 				<button>
 					<TrashSimple
 						size={18}
-						onClick={() => deletarCliente(idCliente)}
+						onClick={() => mostrarModal(idCliente)}
 					/>
 				</button>
 			</div>

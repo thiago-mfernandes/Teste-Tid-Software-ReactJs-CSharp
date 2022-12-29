@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const ContainerForm = styled.form`
   display: flex;
   flex-direction: column;
+  margin: 9rem 1.25rem 2rem;
+  padding: 1.25rem;
+  background-color: ${(props) => props.theme.white};
+	border-radius: 8px;
 
   button {
     background-color: ${(props) => props.theme.roxo};

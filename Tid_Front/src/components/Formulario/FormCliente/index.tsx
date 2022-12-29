@@ -32,7 +32,6 @@ export function FormCliente() {
 
     if(id) {
       reset(cliente);
-      //console.log(cliente);
     }
   }, [cliente]);
 
@@ -41,8 +40,6 @@ export function FormCliente() {
       obterClienteId(parseInt(id));
     }
   }, []);
-
-
 
   return (
     <ContainerForm 
@@ -122,7 +119,7 @@ export function FormCliente() {
         {errors.planoId && <Erro />}
       </ContainerTipoLista>
 
-      <button type="submit" name="Salvar">Salvar</button>
+      <button type="submit" name="Salvar">Salvar</button>      
       <Link to="/Clientes">
         <button type="reset" name="cancelar">
           Cancelar

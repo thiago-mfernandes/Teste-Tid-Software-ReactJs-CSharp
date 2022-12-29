@@ -25,12 +25,11 @@ export function FormPlano() {
   }
 
   useEffect(() => {
-
     if(id) {
       reset(plano);
     }
   }, [plano]);
-
+  
   useEffect(() => {
     if(id) {
       obterPlanoId(parseInt(id));
@@ -63,7 +62,7 @@ export function FormPlano() {
       </ContainerInput>     
 
       <button type="submit" name="Salvar">Salvar</button>
-      <Link to="/Clientes">
+      <Link to="/Planos">
         <button type="reset" name="cancelar">
           Cancelar
         </button>

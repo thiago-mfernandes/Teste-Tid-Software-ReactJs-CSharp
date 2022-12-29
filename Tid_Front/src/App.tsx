@@ -3,13 +3,17 @@ import { ToastContainer } from "react-toastify";
 import { ThemeProvider } from 'styled-components'
 import { BoasVindas } from "./components/BoasVindas";
 import { Clientes } from "./components/Clientes";
-import { Formulario } from "./components/Formulario";
+//import { Formulario } from "./components/Formulario";
 import { Header } from './components/Header'
 import { ContextProvider } from "./Context";
 import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/themes/default'
 
 import 'react-toastify/dist/ReactToastify.min.css'
+import { FormCliente } from "./components/Formulario/FormCliente";
+import { FormPlano } from "./components/Formulario/FormPlano";
+import { Planos } from "./components/Planos";
+
 
 export function App() {
   return (
@@ -24,12 +28,15 @@ export function App() {
               <Route path="/Dashboard" element={ <BoasVindas /> } />
               <Route path="/Agendamentos" element={ <BoasVindas /> } />
               <Route path="/Clientes" element={ <Clientes /> } />
-              <Route path="/Clientes/Formulario" element={ <Formulario /> } />
-              <Route path="/editarCliente/:id" element={ <Formulario /> } />
-              <Route path="/Financas" element={ <BoasVindas /> } />
-              <Route path="/Relatorios" element={ <BoasVindas /> } />
-              <Route path="/Configuracoes" element={ <BoasVindas /> } />
-            </Routes>       
+              <Route path="/Clientes/Formulario" element={ <FormCliente /> } />
+              <Route path="/editarCliente/:id" element={ <FormCliente /> } />
+              <Route path="/Planos" element={ <Planos />} />
+              <Route path="/Planos/Formulario" element={ <FormPlano /> } />
+              <Route path="/editarPlano/:id" element={ <FormPlano /> } />
+              <Route path="/Finanças" element={ <BoasVindas /> } />
+              <Route path="/Relatórios" element={ <BoasVindas /> } />
+              <Route path="/Configurações" element={ <BoasVindas /> } />
+            </Routes>      
         </ThemeProvider>
       </ContextProvider>      
     </BrowserRouter>

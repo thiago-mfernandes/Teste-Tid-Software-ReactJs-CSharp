@@ -21,16 +21,17 @@ export function ContextProvider({children}: ContextProviderProps) {
   const [cliente, setCliente] = useState({});
   const [planos, setPlanos] = useState<Plano[]>([]);
   const [plano, setPlano] = useState({});
-  const [formType, setFormType] = useState(FORM_TYPES.Cliente);
+  // const [formType, setFormType] = useState(FORM_TYPES.Cliente);
+  const [mostrarModalDeletar, setMostrarModalDeletar] = useState(false);
 
   /**
    * Função para escolher o tipo de formulario
    * e para passar dinamicamente na rota???
    */
 
-  const alterarTipoFormulario = (event: ChangeEvent<HTMLInputElement>) => {
-    setFormType(event.target.value);
-  }
+  // const alterarTipoFormulario = (event: ChangeEvent<HTMLInputElement>) => {
+  //   setFormType(event.target.value);
+  // }
 
   //colocar a lista de funcoes de clientes abaixo:
 
@@ -113,7 +114,7 @@ export function ContextProvider({children}: ContextProviderProps) {
           .then(response => setPlanos(response.data))
       })
     
-      navigate("/Clientes");
+      navigate("/Planos");
   }
 
   async function editarCliente(id: number, data: Object) {
@@ -130,7 +131,6 @@ export function ContextProvider({children}: ContextProviderProps) {
   }
 
   async function editarPlano(id: number, data: Object) {
-    //console.log("inside context =>", data);
     await api.put(`/Plano/${id}`, data)
     .then(() => {
       toast.success("Plano editado com sucesso!", {
@@ -139,7 +139,7 @@ export function ContextProvider({children}: ContextProviderProps) {
       api.get("/Plano")
         .then(response => setPlanos(response.data))
     });
-    navigate("/Clientes")
+    navigate("/Planos")
   }
 
   function deletarCliente(id: number) {
@@ -167,9 +167,9 @@ export function ContextProvider({children}: ContextProviderProps) {
   return (
     <Context.Provider value={{
       //retornar estados e funcoes para os componentes
-      formType, 
-      setFormType,
-      alterarTipoFormulario,
+      // formType, 
+      // setFormType,
+      // alterarTipoFormulario,
 
       clientes, 
       setClientes, 
@@ -190,7 +190,8 @@ export function ContextProvider({children}: ContextProviderProps) {
       adicionarPlano,
       deletarPlano,
       obterPlanoId,
-      editarPlano
+      editarPlano,
+
 
       }}>
       {children}
