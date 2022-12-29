@@ -1,5 +1,6 @@
 import { ChangeEvent, createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { api } from "./services/api";
 import { Cliente, ClienteContextProps, ContextProviderProps, Plano } from './types/interfaces'
 
@@ -27,7 +28,7 @@ export function ContextProvider({children}: ContextProviderProps) {
    * e para passar dinamicamente na rota???
    */
 
-  const handleChangeFormType = (event: ChangeEvent<HTMLInputElement>) => {
+  const alterarTipoFormulario = (event: ChangeEvent<HTMLInputElement>) => {
     setFormType(event.target.value);
   }
 
@@ -76,6 +77,9 @@ export function ContextProvider({children}: ContextProviderProps) {
       //na rota de clientes, enviar o objeto
       .post("/Cliente", clienteForm)
       .then(() => {
+        toast.success("Cliente cadastrado com sucesso!", {
+          autoClose: 2000
+        });
         //forçar um get na rota clientes
         api.get("/Cliente")
           //e setar a lista de clientes com a resposta para a exibição nas tabelas
@@ -100,6 +104,9 @@ export function ContextProvider({children}: ContextProviderProps) {
       //na rota de clientes, enviar o objeto
       .post("/Plano", planoForm)
       .then(() => {
+        toast.success("Plano cadastrado com sucesso!", {
+          autoClose: 2000
+        })
         //forçar um get na rota clientes
         api.get("/Plano")
           //e setar a lista de clientes com a resposta para a exibição nas tabelas
@@ -113,25 +120,34 @@ export function ContextProvider({children}: ContextProviderProps) {
     //console.log("inside context =>", data);
     await api.put(`/Cliente/${id}`, data)
     .then(() => {
+      toast.success("Cliente editado com sucesso!", {
+        autoClose: 2000
+      })
       api.get("/Cliente")
         .then(response => setClientes(response.data))
     });
-    //navigate("/")
+    navigate("/Clientes")
   }
 
   async function editarPlano(id: number, data: Object) {
     //console.log("inside context =>", data);
     await api.put(`/Plano/${id}`, data)
     .then(() => {
+      toast.success("Plano editado com sucesso!", {
+        autoClose: 2000
+      })
       api.get("/Plano")
         .then(response => setPlanos(response.data))
     });
-    //navigate("/")
+    navigate("/Clientes")
   }
 
   function deletarCliente(id: number) {
     api.delete(`/Cliente/${id}`)
     .then(() => {
+      toast.success("Cliente excluido com sucesso!", {
+        autoClose: 2000
+      })
       api.get("/Cliente")
         .then(response => setClientes(response.data))
     });
@@ -140,6 +156,9 @@ export function ContextProvider({children}: ContextProviderProps) {
   function deletarPlano(id: number) {
     api.delete(`/Plano/${id}`)
     .then(() => {
+      toast.success("Plano excluido com sucesso!", {
+        autoClose: 2000
+      })
       api.get("/Plano")
         .then(response => setPlanos(response.data))
     });
@@ -150,7 +169,7 @@ export function ContextProvider({children}: ContextProviderProps) {
       //retornar estados e funcoes para os componentes
       formType, 
       setFormType,
-      handleChangeFormType,
+      alterarTipoFormulario,
 
       clientes, 
       setClientes, 

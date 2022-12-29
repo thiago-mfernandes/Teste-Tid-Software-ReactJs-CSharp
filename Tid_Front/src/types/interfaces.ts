@@ -19,7 +19,7 @@ export interface Plano {
 export interface ClienteContextProps {
   formType: string;
   setFormType: React.Dispatch<React.SetStateAction<string>>;
-  handleChangeFormType: (event: ChangeEvent<HTMLInputElement>) => void;
+  alterarTipoFormulario: (event: ChangeEvent<HTMLInputElement>) => void;
 
   clientes: Cliente[];
   setClientes: React.Dispatch<React.SetStateAction<Cliente[]>>

@@ -11,11 +11,11 @@ export const defaultTheme = {
   verde: '#04D361',
   vermelho: '#AB222E',
 
-  'cinza-fontes': '#6D6C6C',
-  'cinza-Destaque': '#6474747',
+  'cinza-Fontes': '#6D6C6C',
+  'cinza-Destaque': '#474747',
   'cinza-Tabela': '#DDDEE1',
 
-  'cinza-linha': '#d9d9d9',
+  'cinza-Linha': '#d9d9d9',
 
   'cinza-escuro': '#474747' ,
 

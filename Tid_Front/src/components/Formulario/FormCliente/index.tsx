@@ -15,7 +15,8 @@ type Inputs = {
 };
 
 export function FormCliente() {
-  const { id } = useParams();
+  
+  const { id } = useParams();  
   const { register, handleSubmit, reset, formState: { errors } } = useForm<Inputs>();
   const { adicionarCliente, cliente, editarCliente, obterClienteId } = useContext(Context);
  
@@ -31,6 +32,7 @@ export function FormCliente() {
 
     if(id) {
       reset(cliente);
+      //console.log(cliente);
     }
   }, [cliente]);
 
@@ -60,7 +62,7 @@ export function FormCliente() {
       <ContainerInput>
         <label htmlFor="ultima_visita">Ultima Visita</label>
         <input 
-          type="datetime-local" 
+          type="date" 
           id="ultima_visita"
           {...register("ultima_visita", { required: true })}
         />

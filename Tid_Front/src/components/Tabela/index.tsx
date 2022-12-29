@@ -1,5 +1,5 @@
 import { UserPlus } from "phosphor-react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../Context";
 import { Acoes } from "./Acoes";
@@ -7,7 +7,8 @@ import { ContainerSection, ContainerTabela } from "./styles";
 
 export function Tabela() {
 
-	const { clientes, planos } = useContext(Context);
+	const { clientes } = useContext(Context);
+	const[busca, setBusca] = useState("");
 
 	function mostrarDataFormatada(date: Date) {
 		const dataRecebida = new Date(date);
@@ -24,16 +25,6 @@ export function Tabela() {
 		return Math.floor(Math.random() * (max - min) + min);
 	}
 
-	// function mostrarNomePlano(ClientePlanoId:number) {
-	// 	planos.filter((plano) => {
-	// 		if (plano.id == ClientePlanoId) {
-	// 			return plano.filiacao;			
-	// 		} else {
-	// 			return console.log("plano nao encontrado")
-	// 		}
-	// 	});
-	// }
-
   return (
 		<ContainerSection>
 			<h2>Clientes</h2>
@@ -43,7 +34,13 @@ export function Tabela() {
 					Adicionar
 				</button>
 			</Link>
-			<input type="text"placeholder="Pesquisar por nome..."/>
+			<input 
+            type="search" 
+            id="search"
+						placeholder="Pesquise por nome.."
+            value={busca}
+            onChange={(e) => setBusca(e.target.value)}
+          />
 
 			<ContainerTabela>
           <thead>
@@ -59,7 +56,13 @@ export function Tabela() {
           </thead>
           <tbody>
 						{
-							clientes.map((cliente) => (
+							clientes.filter((cliente) => {
+								if(busca === "") {
+									return cliente;
+								} else if ( cliente.nome.includes(busca)) {
+									return cliente;
+								}
+							}).map((cliente) => (
 								<tr key={cliente.id}>
 									<td data-label="Nome:">{cliente.nome}</td>
 									<td data-label="Última Visita:">{mostrarDataFormatada(cliente.Ultima_visita)}</td>

@@ -9,6 +9,8 @@ import { ContextProvider } from "./Context";
 import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/themes/default'
 
+import 'react-toastify/dist/ReactToastify.min.css'
+
 export function App() {
   return (
     <BrowserRouter>
@@ -23,6 +25,7 @@ export function App() {
               <Route path="/Agendamentos" element={ <BoasVindas /> } />
               <Route path="/Clientes" element={ <Clientes /> } />
               <Route path="/Clientes/Formulario" element={ <Formulario /> } />
+              <Route path="/editarCliente/:id" element={ <Formulario /> } />
               <Route path="/Financas" element={ <BoasVindas /> } />
               <Route path="/Relatorios" element={ <BoasVindas /> } />
               <Route path="/Configuracoes" element={ <BoasVindas /> } />

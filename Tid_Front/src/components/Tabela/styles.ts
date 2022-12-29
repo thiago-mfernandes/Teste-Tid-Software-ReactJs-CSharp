@@ -12,6 +12,12 @@ export const ContainerSection = styled.section`
 		margin-bottom: 1rem;
 	}
 
+	a {
+		width: 60%;
+		text-decoration: none;
+		display: flex;
+	}
+
 	button {
 		background-color: ${(props) => props.theme.roxo};
 		color: ${(props) => props.theme.white};
@@ -19,7 +25,7 @@ export const ContainerSection = styled.section`
 		border-radius: 8px;
 		padding: 4px;
 		margin-bottom: 1.5rem;
-		width: 60%;
+		width: 100%;
 		height: 2.5rem;
 		display: flex;
 		justify-content: center;
@@ -29,6 +35,7 @@ export const ContainerSection = styled.section`
 		}
 
 		svg {
+			//width: 100%;
 			margin-right: 8px;
 		}
 	}
@@ -82,12 +89,11 @@ export const ContainerTabela = styled.table`
 
 		tr {
 			width: 100%;
-			margin: 12rem 0;
 			
 
 			td {
 				display: block;
-				width: 204%;
+				width: 147%;
 				padding: 10% 5% 10% 10%;
 				text-align: right;
 				position: relative;
@@ -97,13 +103,14 @@ export const ContainerTabela = styled.table`
 				&:last-of-type {
 					border-bottom: 5px solid ${(props) => props.theme.roxo};
 				}
-
+				
 				&::before {
 					content: attr(data-label);
+					text-overflow: ellipsis;
 					position: absolute;
 					left: 0;
-					width: 100%;
-					padding-left: 15px;
+					width: 95%;
+					padding-left: 16px;
 					font-size: .75rem;
 					text-align: left;
 					vertical-align: middle;
