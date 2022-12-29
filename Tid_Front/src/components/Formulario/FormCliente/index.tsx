@@ -1,12 +1,17 @@
 import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Context } from "../../../Context";
-import { useParams } from "react-router-dom";
-import { ContainerInput, ContainerTipoLista } from "./styles";
+import { Link, useParams } from "react-router-dom";
+import { ContainerForm, ContainerInput, ContainerTipoLista } from "./styles";
+import { Erro } from "../Erro";
 
 type Inputs = {
-  example: string,
-  exampleRequired: string,
+  nome: string,
+  ultima_visita: Date,
+  cpf: number,
+  genero: string,
+  telefone: number,
+  planoId: number
 };
 
 export function FormCliente() {
@@ -16,7 +21,7 @@ export function FormCliente() {
  
   async function onSubmit(data: Object) {
     if(id) {
-      await editarCliente(id, data);
+      await editarCliente(parseInt(id), data);
     } else {
       await adicionarCliente(data);
     }
@@ -31,23 +36,26 @@ export function FormCliente() {
 
   useEffect(() => {
     if(id) {
-      obterClienteId(id);
+      obterClienteId(parseInt(id));
     }
   }, []);
 
 
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} method="POST">
+    <ContainerForm 
+      onSubmit={handleSubmit(onSubmit)} 
+      method="POST"
+    >
 
       <ContainerInput>
         <label htmlFor="nome">Nome</label>
         <input 
           type="text" 
-          id="nome"
           placeholder="Nome completo"
-          {...register('nome', { required: true })}
+          {...register("nome", { required: true })}
         />
+        {errors.nome && <Erro />}
       </ContainerInput>
       <ContainerInput>
         <label htmlFor="ultima_visita">Ultima Visita</label>
@@ -56,6 +64,7 @@ export function FormCliente() {
           id="ultima_visita"
           {...register("ultima_visita", { required: true })}
         />
+        {errors.ultima_visita && <Erro />}
       </ContainerInput>
       <ContainerInput>
         <label htmlFor="cpf">CPF</label>
@@ -63,8 +72,9 @@ export function FormCliente() {
           type="number" 
           id="cpf"
           placeholder="000.000.00-00"
-          {...register('cpf', { required: true })}
+          {...register("cpf", { required: true })}
         />
+        {errors.cpf && <Erro />}
       </ContainerInput>
 
       <ContainerTipoLista>
@@ -79,6 +89,7 @@ export function FormCliente() {
           <option value="Masculino">Masculino</option>
           <option value="Feminino">Feminino</option>
         </select>
+        {errors.genero && <Erro />}
       </ContainerTipoLista>
       <ContainerInput>
         <label htmlFor="telefone">Telefone</label>
@@ -86,8 +97,9 @@ export function FormCliente() {
           type="number" 
           id="telefone"
           placeholder="(00) 0 0000-0000"
-          {...register('telefone', { required: true })}
+          {...register("telefone", { required: true })}
         />
+        {errors.telefone && <Erro />}
       </ContainerInput>
 
       <ContainerTipoLista>
@@ -105,11 +117,15 @@ export function FormCliente() {
           <option value="4">Casual</option>
           <option value="5">Aula Grátis</option>
         </select>
+        {errors.planoId && <Erro />}
       </ContainerTipoLista>
 
-      <button>Salvar</button>
-      <button>Cancelar</button>
-
-    </form>
+      <button type="submit" name="Salvar">Salvar</button>
+      <Link to="/Clientes">
+        <button type="reset" name="cancelar">
+          Cancelar
+        </button>
+      </Link>
+    </ContainerForm>
   )
 }

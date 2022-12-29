@@ -1,4 +1,5 @@
 import {  BrowserRouter, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import { ThemeProvider } from 'styled-components'
 import { BoasVindas } from "./components/BoasVindas";
 import { Clientes } from "./components/Clientes";
@@ -14,6 +15,7 @@ export function App() {
       <ContextProvider>
         <ThemeProvider theme={defaultTheme}>
           <GlobalStyle />
+          <ToastContainer />
           <Header />
             <Routes>
               <Route path="/" element={ <BoasVindas />} />

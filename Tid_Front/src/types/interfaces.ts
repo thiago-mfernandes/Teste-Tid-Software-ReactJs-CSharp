@@ -28,9 +28,9 @@ export interface ClienteContextProps {
   setCliente: React.Dispatch<React.SetStateAction<Cliente[]>>
 
   adicionarCliente: (cliente: Object) => Promise<void>;
-  deletarCliente: (id: string) => void;
-  obterClienteId: (id: string) => Promise<void>;
-  editarCliente: (id: string, cliente: Object) => Promise<void>;
+  deletarCliente: (id: number) => void;
+  obterClienteId: (id: number) => Promise<void>;
+  editarCliente: (id: number, cliente: Object) => Promise<void>;
 
   planos: Plano[];
   setPlanos: React.Dispatch<React.SetStateAction<Plano[]>>
@@ -39,9 +39,9 @@ export interface ClienteContextProps {
   setPlano: React.Dispatch<React.SetStateAction<Plano[]>>
 
   adicionarPlano: (plano: Object) => Promise<void>;
-  deletarPlano: (id: string) => void;
-  obterPlanoId: (id: string) => Promise<void>;
-  editarPlano: (id: string, plano: Object) => Promise<void>;
+  deletarPlano: (id: number) => void;
+  obterPlanoId: (id: number) => Promise<void>;
+  editarPlano: (id: number, plano: Object) => Promise<void>;
 }
 
 export interface ContextProviderProps {

@@ -4,10 +4,7 @@ export const ContainerSection = styled.section`
   background-color: ${(props) => props.theme.white};
 	border-radius: 8px;
 	padding: 16px;
-	//overflow para o border-radius aparecer; 
-	//overflow: hidden;
 	table-layout: fixed;
-	//width: 97%;
 	word-wrap: break-word;
 
 	h2 {

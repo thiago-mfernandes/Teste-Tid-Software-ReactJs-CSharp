@@ -46,13 +46,13 @@ export function ContextProvider({children}: ContextProviderProps) {
   }, []) 
 
   //obter cliente por id
-  async function obterClienteId(id: string) {
+  async function obterClienteId(id: number) {
     //passar o id pela rota e receber atraves de data
     const { data } = await api.get(`/Cliente/${id}`);
     setCliente(data);
   }
 
-  async function obterPlanoId(id: string) {
+  async function obterPlanoId(id: number) {
     const { data } = await api.get(`/Plano/${id}`);
     setPlano(data);
   }
@@ -60,12 +60,11 @@ export function ContextProvider({children}: ContextProviderProps) {
   //aqui esta tipado como any para poder receber um objeto
   async function adicionarCliente(cliente: any) {
     //aqui vou popular um objeto
-    //chave: estado cliente.chave
-
+    //chave: estado cliente.chave 
     const clienteForm = {
       id: cliente.id,
       nome: cliente.nome,
-      Ultima_visita: cliente.Ultima_visita,
+      Ultima_visita: cliente.ultima_visita,
       cpf: cliente.cpf,
       genero: cliente.genero,
       telefone: cliente.telefone,
@@ -81,7 +80,9 @@ export function ContextProvider({children}: ContextProviderProps) {
         api.get("/Cliente")
           //e setar a lista de clientes com a resposta para a exibição nas tabelas
           .then(response => setClientes(response.data))
-      })
+      });
+
+      navigate("/Clientes");
   }
   //aqui esta tipado como any para poder receber um objeto
   async function adicionarPlano(plano: any) {
@@ -104,9 +105,11 @@ export function ContextProvider({children}: ContextProviderProps) {
           //e setar a lista de clientes com a resposta para a exibição nas tabelas
           .then(response => setPlanos(response.data))
       })
+    
+      navigate("/Clientes");
   }
 
-  async function editarCliente(id: string, data: Object) {
+  async function editarCliente(id: number, data: Object) {
     //console.log("inside context =>", data);
     await api.put(`/Cliente/${id}`, data)
     .then(() => {
@@ -116,7 +119,7 @@ export function ContextProvider({children}: ContextProviderProps) {
     //navigate("/")
   }
 
-  async function editarPlano(id: string, data: Object) {
+  async function editarPlano(id: number, data: Object) {
     //console.log("inside context =>", data);
     await api.put(`/Plano/${id}`, data)
     .then(() => {
@@ -126,7 +129,7 @@ export function ContextProvider({children}: ContextProviderProps) {
     //navigate("/")
   }
 
-  function deletarCliente(id: string) {
+  function deletarCliente(id: number) {
     api.delete(`/Cliente/${id}`)
     .then(() => {
       api.get("/Cliente")
@@ -134,7 +137,7 @@ export function ContextProvider({children}: ContextProviderProps) {
     });
   }
 
-  function deletarPlano(id: string) {
+  function deletarPlano(id: number) {
     api.delete(`/Plano/${id}`)
     .then(() => {
       api.get("/Plano")
