@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
-	border-top: 1px solid ${(props) => props.theme["cinza-linha"]};
+	border-top: 1px solid ${(props) => props.theme["cinza-Linha"]};
 	padding: 1.5rem 0.75rem;
 `
 

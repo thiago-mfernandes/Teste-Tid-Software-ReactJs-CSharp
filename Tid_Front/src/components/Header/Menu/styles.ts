@@ -14,7 +14,7 @@ export const Container = styled.div<MenuProps>`
 	width: 100%;
 	height: 8rem;
 	overflow: hidden;
-	z-index: 1000;
+	z-index: 10;
 	top: 0;
 	left: 0;
 	right: 0;

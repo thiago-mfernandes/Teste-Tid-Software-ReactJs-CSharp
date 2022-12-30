@@ -22,7 +22,7 @@ export function ContextProvider({children}: ContextProviderProps) {
   const [planos, setPlanos] = useState<Plano[]>([]);
   const [plano, setPlano] = useState({});
   // const [formType, setFormType] = useState(FORM_TYPES.Cliente);
-  const [mostrarModalDeletar, setMostrarModalDeletar] = useState(false);
+  const [mostrarModal, setMostrarModal] = useState(false);
 
   /**
    * Função para escolher o tipo de formulario
@@ -142,7 +142,8 @@ export function ContextProvider({children}: ContextProviderProps) {
     navigate("/Planos")
   }
 
-  function deletarCliente(id: number) {
+  function deletarCliente(id: number | null | undefined) {
+    fecharModal();
     api.delete(`/Cliente/${id}`)
     .then(() => {
       toast.success("Cliente excluido com sucesso!", {
@@ -153,7 +154,8 @@ export function ContextProvider({children}: ContextProviderProps) {
     });
   }
 
-  function deletarPlano(id: number) {
+  function deletarPlano(id: number | null | undefined) {
+    fecharModal();
     api.delete(`/Plano/${id}`)
     .then(() => {
       toast.success("Plano excluido com sucesso!", {
@@ -162,6 +164,16 @@ export function ContextProvider({children}: ContextProviderProps) {
       api.get("/Plano")
         .then(response => setPlanos(response.data))
     });
+  }
+
+  /**-------------FUNÇÕES DO MODAL*------------- */
+
+  function abrirModal() {
+    setMostrarModal(true);
+  }
+
+  function fecharModal() {
+    setMostrarModal(false);
   }
   
   return (
@@ -192,6 +204,9 @@ export function ContextProvider({children}: ContextProviderProps) {
       obterPlanoId,
       editarPlano,
 
+      mostrarModal,
+      abrirModal,
+      fecharModal,
 
       }}>
       {children}

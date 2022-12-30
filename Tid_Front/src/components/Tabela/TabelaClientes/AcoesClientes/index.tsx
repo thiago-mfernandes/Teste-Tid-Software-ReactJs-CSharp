@@ -3,7 +3,10 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../../../../Context";
 import { Cliente } from "../../../../types/interfaces";
-import { ContainerTD } from "./styles";
+import { ContainerModal, ContainerTD, StyledModal } from "./styles";
+import Modal from "react-modal";
+
+Modal.setAppElement("#root");
 
 interface BotoesAcaoProps {
 	idCliente?: any;
@@ -13,7 +16,7 @@ interface BotoesAcaoProps {
 
 export function AcoesClientes({idCliente, cliente}: BotoesAcaoProps) {
 
-	const { mostrarModal } = useContext(Context);
+	const { mostrarModal, abrirModal, fecharModal, deletarCliente } = useContext(Context);
 
 	let navigate = useNavigate();
 
@@ -38,10 +41,25 @@ export function AcoesClientes({idCliente, cliente}: BotoesAcaoProps) {
 				<button>
 					<TrashSimple
 						size={18}
-						onClick={() => mostrarModal(idCliente)}
+						onClick={abrirModal}
 					/>
 				</button>
 			</div>
+			<StyledModal
+				isOpen={mostrarModal}
+				onRequestClose={fecharModal}
+				contentLabel="Cliente"
+			>
+				<ContainerModal>
+					<h2>Deseja excluir este Cliente?</h2>
+					<hr />
+					<div>
+						<button onClick={fecharModal}>Não</button>
+						<button onClick={() => deletarCliente(cliente.id)}>Sim</button>
+					</div>
+				</ContainerModal>
+
+			</StyledModal>
 		</ContainerTD>
 	)
 }

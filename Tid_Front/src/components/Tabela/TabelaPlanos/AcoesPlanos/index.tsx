@@ -1,30 +1,23 @@
-import { PencilSimpleLine, Phone, TrashSimple } from "phosphor-react";
+import { PencilSimpleLine, TrashSimple } from "phosphor-react";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../../../../Context";
 import { Plano } from "../../../../types/interfaces";
-import { ContainerTD } from "./styles";
-import NiceModal from '@ebay/nice-modal-react';
-import MyAntdModal from '../../../Modal';
+import { ContainerModal, ContainerTD, StyledModal } from "./styles";
+import Modal from "react-modal"
+
+Modal.setAppElement("#root");
 
 interface BotoesAcaoProps {
-	idPlano?: any;
-	// any porque pode ser undefined
 	plano: Plano;
 }
 
-export function AcoesPlanos({idPlano, plano}: BotoesAcaoProps) {
+export function AcoesPlanos({ plano}: BotoesAcaoProps) {
 
-	const { deletarPlano } = useContext(Context);
+	const { mostrarModal, abrirModal, fecharModal, deletarPlano } = useContext(Context);
 	let navigate = useNavigate();
 
-	function showAntdModal(id: number) {
-    NiceModal.show(MyAntdModal, {
-			title: "Deseja excluir este plano?",
-			acao: "deletarPlano"
-		})
-  };
-
+	
   return (
 		<ContainerTD data-label="Ações:">
 			<div>
@@ -38,15 +31,25 @@ export function AcoesPlanos({idPlano, plano}: BotoesAcaoProps) {
 				<button>
 					<TrashSimple
 						size={18}
-						// onClick={() => deletarPlano(idPlano)}
-						onClick={() => showAntdModal(plano.id)}
+						onClick={abrirModal}
 					/>
 				</button>
 			</div>
+			<StyledModal
+				isOpen={mostrarModal}
+				onRequestClose={fecharModal}
+				contentLabel="Plano"
+			>
+				<ContainerModal>
+					<h2>Deseja excluir este Plano?</h2>
+					<hr />
+					<div>
+						<button onClick={fecharModal}>Não</button>
+						<button onClick={() => deletarPlano(plano.id)}>Sim</button>
+					</div>
+				</ContainerModal>
 
-			<div>
-
-			</div>
+			</StyledModal>
 		</ContainerTD>
 	)
 }

@@ -39,15 +39,6 @@
       "planoId": "1",
       "id": 5,
       "ultima_visita": "2022-12-06"
-    },
-    {
-      "nome": "Marcos",
-      "Ultima_visita": "2022-12-29",
-      "cpf": "45678912300",
-      "genero": "Masculino",
-      "telefone": "19983824466",
-      "planoId": "1",
-      "id": 6
     }
   ],
   "Plano": [

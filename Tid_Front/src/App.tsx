@@ -3,7 +3,6 @@ import { ToastContainer } from "react-toastify";
 import { ThemeProvider } from 'styled-components'
 import { BoasVindas } from "./components/BoasVindas";
 import { Clientes } from "./components/Clientes";
-//import { Formulario } from "./components/Formulario";
 import { Header } from './components/Header'
 import { ContextProvider } from "./Context";
 import { GlobalStyle } from './styles/global'

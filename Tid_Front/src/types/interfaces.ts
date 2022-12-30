@@ -28,7 +28,7 @@ export interface ClienteContextProps {
   setCliente: React.Dispatch<React.SetStateAction<Cliente[]>>
 
   adicionarCliente: (cliente: Object) => Promise<void>;
-  deletarCliente: (id: number) => void;
+  deletarCliente: (id: number | null | undefined) => void;
   obterClienteId: (id: number) => Promise<void>;
   editarCliente: (id: number, cliente: Object) => Promise<void>;
 
@@ -39,9 +39,13 @@ export interface ClienteContextProps {
   setPlano: React.Dispatch<React.SetStateAction<Plano[]>>
 
   adicionarPlano: (plano: Object) => Promise<void>;
-  deletarPlano: (id: number) => void;
+  deletarPlano: (id: number | null | undefined) => void;
   obterPlanoId: (id: number) => Promise<void>;
   editarPlano: (id: number, plano: Object) => Promise<void>;
+
+  mostrarModal: boolean;
+  abrirModal: () => void;
+  fecharModal: () => void;
 
 }
 
