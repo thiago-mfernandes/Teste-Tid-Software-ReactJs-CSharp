@@ -42,7 +42,7 @@ export function TabelaClientes() {
 				onChange={(e) => setBusca(e.target.value)}
 			/>
 
-			<ContainerTabela variant={busca}>
+			<ContainerTabela>
           <thead>
             <tr>
               <th>Nome</th>

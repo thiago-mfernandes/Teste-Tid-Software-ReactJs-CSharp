@@ -54,11 +54,7 @@ export const ContainerSection = styled.section`
 	}
 `
 
-interface ContainerTabelaProps {
-	variant: string | undefined
-}
-
-export const ContainerTabela = styled.table<ContainerTabelaProps>`
+export const ContainerTabela = styled.table`
 	background-color: ${(props) => props.theme["cinza-Tabela"]};
 	border-radius: 8px;
 	display: block;
@@ -92,7 +88,7 @@ export const ContainerTabela = styled.table<ContainerTabelaProps>`
 
 			td {
 				display: block;
-				width: ${({variant}) => variant ? '224%' : '147%' };
+				width: 224%;
 				padding: 10% 5% 10% 10%;
 				text-align: right;
 				position: relative;
@@ -101,7 +97,7 @@ export const ContainerTabela = styled.table<ContainerTabelaProps>`
 				font-weight: bold;
 				&:last-of-type {
 					border-bottom: 5px solid ${(props) => props.theme.roxo};
-					width: ${({variant}) => variant ? '224%' : '147%' };
+					width: 224%;
 				}
 				
 				&::before {
