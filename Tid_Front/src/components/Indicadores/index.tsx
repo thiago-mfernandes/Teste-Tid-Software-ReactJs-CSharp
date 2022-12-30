@@ -21,18 +21,18 @@ export function Indicadores() {
 		return acumulador;
 	}, 0);
 	
-	// const totalVisitasUltimosSeteDias = clientes.reduce((acumulador, cliente):any => {  
-	// 	const {days} = intervalToDuration({
-	// 		start: new Date(cliente.Ultima_visita),
-	// 		end: new Date()
-	// 	});
-	// 	// Novos visitantes são considerados quando cadastrados nos ultimos 7 dias..
-	// 	if (days <= 7){
-	// 		return acumulador + 1;
-	// 	}
+	const totalVisitasUltimosSeteDias = clientes.reduce((acumulador, cliente):any => {  
+		const { days } = intervalToDuration({
+			start: new Date(cliente.ultima_visita),
+			end: new Date()
+		});
+		// Novos visitantes são considerados quando cadastrados nos ultimos 7 dias..
+		if (days <= 7){
+			return acumulador + 1;
+		}
 
-	// 	return acumulador;
-	// }, 0);
+		return acumulador;
+	}, 0);
  
 	const totalInativos = clientes.reduce((acumulador, cliente):any => {
 		// Cliente com aula gratis e sem plano..
@@ -51,8 +51,7 @@ export function Indicadores() {
 			case 'Filiados':
 				return totalFiliados;
 			case 'Novos':
-				// return totalVisitasUltimosSeteDias;
-				return "implementar"
+				return totalVisitasUltimosSeteDias;
 			case 'Inativos':
 				return totalInativos;
 			default:

@@ -3,11 +3,13 @@ import { ReactNode } from "react";
 export interface Cliente {
   id?: number | null;
   nome: string;
-  Ultima_visita: Date;
+  ultima_visita: Date;
   cpf: string;
   genero: string;
   telefone: string;
   planoId: number;
+  filiacao?: string;
+  preco?: number;
 }
 
 export interface Plano {

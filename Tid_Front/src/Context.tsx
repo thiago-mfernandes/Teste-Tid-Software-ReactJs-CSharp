@@ -1,4 +1,4 @@
-import { ChangeEvent, createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "./services/api";
@@ -26,6 +26,8 @@ export function ContextProvider({children}: ContextProviderProps) {
   useEffect(() => {
     api.get("/Cliente")
       .then((response) => setClientes(response.data))
+      console.log("context, obter todos os clientes");
+      console.log(clientes);
   }, []) 
 
   //obter todos os planos
@@ -48,8 +50,7 @@ export function ContextProvider({children}: ContextProviderProps) {
 
   //aqui esta tipado como any para poder receber um objeto
   async function adicionarCliente(cliente: any) {
-    //aqui vou popular um objeto
-    //chave: estado cliente.chave 
+
     const clienteForm = {
       id: cliente.id,
       nome: cliente.nome,
@@ -59,6 +60,8 @@ export function ContextProvider({children}: ContextProviderProps) {
       telefone: cliente.telefone,
       planoId: cliente.planoId
     }
+
+    // console.log(clienteForm);
 
     //atualmente, aqui eh onde roda meu json-server: "http://localhost:3333/"
     await api

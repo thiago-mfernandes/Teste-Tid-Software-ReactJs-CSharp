@@ -59,7 +59,7 @@ export function FormCliente() {
       <ContainerInput>
         <label htmlFor="ultima_visita">Ultima Visita</label>
         <input 
-          type="date" 
+          type="datetime-local" 
           id="ultima_visita"
           {...register("ultima_visita", { required: true })}
         />

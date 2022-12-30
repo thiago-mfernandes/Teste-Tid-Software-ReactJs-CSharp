@@ -14,6 +14,7 @@ namespace API_Tid
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddCors();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -37,14 +38,23 @@ namespace API_Tid
                 app.UseSwaggerUI();
             }
 
+            app.UseCors(options =>
+            {
+                // options.WithOrigins("http://localhost:3000/");
+                options.AllowAnyHeader();
+                options.AllowAnyMethod();
+                options.AllowAnyOrigin();
+            });
+
             app.UseHttpsRedirection();
-
+            app.UseRouting();
             app.UseAuthorization();
-
 
             app.MapControllers();
 
             app.Run();
+
+
         }
     }
 }
