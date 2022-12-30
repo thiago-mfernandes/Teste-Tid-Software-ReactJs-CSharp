@@ -54,14 +54,15 @@ export function ContextProvider({children}: ContextProviderProps) {
     const clienteForm = {
       id: cliente.id,
       nome: cliente.nome,
-      Ultima_visita: cliente.ultima_visita,
+      ultima_visita: cliente.ultima_visita,
       cpf: cliente.cpf,
       genero: cliente.genero,
       telefone: cliente.telefone,
       planoId: cliente.planoId
     }
 
-    // console.log(clienteForm);
+    console.log("funcao adicionarCliente =>");
+    console.log(clienteForm);
 
     //atualmente, aqui eh onde roda meu json-server: "http://localhost:3333/"
     await api

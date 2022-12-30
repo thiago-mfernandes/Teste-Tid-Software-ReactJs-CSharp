@@ -80,7 +80,7 @@ namespace API_Tid.Repositorios.Interfaces
 
             if (clienteAtualizado == null)
             {
-                throw new Exception($"Clientee para o ID: {id} não encontrado no banco de dados.");
+                throw new Exception($"Cliente para o ID: {id} não encontrado no banco de dados.");
             }
 
             clienteAtualizado.Id = cliente.Id;

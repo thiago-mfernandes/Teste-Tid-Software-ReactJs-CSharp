@@ -18,9 +18,11 @@ export function FormCliente() {
   
   const { id } = useParams();  
   const { register, handleSubmit, reset, formState: { errors } } = useForm<Inputs>();
-  const { adicionarCliente, cliente, editarCliente, obterClienteId } = useContext(Context);
+  const { adicionarCliente, cliente, editarCliente, obterClienteId, planos } = useContext(Context);
  
   async function onSubmit(data: Object) {
+    console.log("formCliente, funcao onSubmit =>");
+    console.log(data);
     if(id) {
       await editarCliente(parseInt(id), data);
     } else {
@@ -110,11 +112,13 @@ export function FormCliente() {
           {...register("planoId", { required: true})}
         >
           <option value=""></option>
-          <option value="1">Golden</option>
-          <option value="2">Silver</option>
-          <option value="3">Light</option>
-          <option value="4">Casual</option>
-          <option value="5">Aula Grátis</option>
+          {
+            planos.map((plano) =>(
+              <option key={plano.id} value={plano.id}>
+                {plano.filiacao}
+              </option>
+            ))
+          }
         </select>
         {errors.planoId && <Erro />}
       </ContainerTipoLista>
