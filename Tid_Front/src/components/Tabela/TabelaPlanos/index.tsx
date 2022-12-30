@@ -20,38 +20,38 @@ export function TabelaPlanos() {
 				</button>
 			</Link>
 			<input 
-            type="search" 
-            id="search"
-						placeholder="Pesquise por nome.."
-            value={busca}
-            onChange={(e) => setBusca(e.target.value)}
-          />
+				type="search" 
+				id="search"
+				placeholder="Pesquise por nome.."
+				value={busca}
+				onChange={(e) => setBusca(e.target.value)}
+			/>
 
 			<ContainerTabela variant={busca}>
-          <thead>
-            <tr>
-              <th>Filiação</th>
-              <th>Preço</th>
-            </tr>
-          </thead>
-          <tbody>
-						{
-							planos.filter((plano) => {
-								if(busca === "") {
-									return plano;
-								} else if ( plano.filiacao.includes(busca)) {
-									return plano;
-								}
-							}).map((plano) => (
-								<tr key={plano.id}>
-									<td data-label="Filiação:">{plano.filiacao}</td>
-									<td data-label="Preço:">{plano.preco}</td>
-									<AcoesPlanos idPlano={plano.id} plano={plano} />
-								</tr>
-							))
-						}				
-          </tbody>
-        </ContainerTabela>
+				<thead>
+					<tr>
+						<th>Filiação</th>
+						<th>Preço</th>
+					</tr>
+				</thead>
+				<tbody>
+					{
+						planos.filter((plano) => {
+							if(busca === "") {
+								return plano;
+							} else if ( plano.filiacao.includes(busca)) {
+								return plano;
+							}
+						}).map((plano) => (
+							<tr key={plano.id}>
+								<td data-label="Filiação:">{plano.filiacao}</td>
+								<td data-label="Preço:">{plano.preco}</td>
+								<AcoesPlanos plano={plano} />
+							</tr>
+						))
+					}				
+				</tbody>
+			</ContainerTabela>
 		</ContainerSection>
 	)
 }

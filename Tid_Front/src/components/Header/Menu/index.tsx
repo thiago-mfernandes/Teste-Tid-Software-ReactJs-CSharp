@@ -24,10 +24,10 @@ export function Menu() {
 			<List size={24} onClick={showMenu}/>
 
 			{menuIsVisible && 
-			<>
-				<Navbar menuIsVisible={menuIsVisible} onUserClick={setMenuIsVisible}/>
-				<MenuUsuario menuIsVisible={menuIsVisible} />			
-			</>
+				<>
+					<Navbar menuIsVisible={menuIsVisible} onUserClick={setMenuIsVisible}/>
+					<MenuUsuario menuIsVisible={menuIsVisible} />			
+				</>
 			}
 		</Container>
 	)

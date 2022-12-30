@@ -35,12 +35,12 @@ export function TabelaClientes() {
 				</button>
 			</Link>
 			<input 
-            type="search" 
-            id="search"
-						placeholder="Pesquise por nome.."
-            value={busca}
-            onChange={(e) => setBusca(e.target.value)}
-          />
+				type="search" 
+				id="search"
+				placeholder="Pesquise por nome.."
+				value={busca}
+				onChange={(e) => setBusca(e.target.value)}
+			/>
 
 			<ContainerTabela variant={busca}>
           <thead>

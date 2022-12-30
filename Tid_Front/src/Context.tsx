@@ -6,7 +6,6 @@ import { Cliente, ClienteContextProps, ContextProviderProps, Plano } from './typ
 
 
 export const Context = createContext<ClienteContextProps>({} as ClienteContextProps);
-
 export function ContextProvider({children}: ContextProviderProps) {
 
   const FORM_TYPES = {
@@ -16,23 +15,11 @@ export function ContextProvider({children}: ContextProviderProps) {
 
   //colocar todos os estados aqui
   const navigate = useNavigate();  
-                                        //array do tipo clientes
   const [clientes, setClientes] = useState<Cliente[]>([]);
   const [cliente, setCliente] = useState({});
   const [planos, setPlanos] = useState<Plano[]>([]);
   const [plano, setPlano] = useState({});
-  // const [formType, setFormType] = useState(FORM_TYPES.Cliente);
   const [mostrarModal, setMostrarModal] = useState(false);
-
-  /**
-   * Função para escolher o tipo de formulario
-   * e para passar dinamicamente na rota???
-   */
-
-  // const alterarTipoFormulario = (event: ChangeEvent<HTMLInputElement>) => {
-  //   setFormType(event.target.value);
-  // }
-
   //colocar a lista de funcoes de clientes abaixo:
 
   //obter todos os clientes
@@ -178,11 +165,7 @@ export function ContextProvider({children}: ContextProviderProps) {
   
   return (
     <Context.Provider value={{
-      //retornar estados e funcoes para os componentes
-      // formType, 
-      // setFormType,
-      // alterarTipoFormulario,
-
+      
       clientes, 
       setClientes, 
       cliente, 

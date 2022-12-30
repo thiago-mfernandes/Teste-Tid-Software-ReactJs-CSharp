@@ -73,7 +73,6 @@ export function Indicadores() {
       return <CircleNotch size={24} />;
     }
   }
-
 	
   return (
 		<Container>

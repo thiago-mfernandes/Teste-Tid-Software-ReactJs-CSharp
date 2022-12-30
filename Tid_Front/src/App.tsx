@@ -7,12 +7,11 @@ import { Header } from './components/Header'
 import { ContextProvider } from "./Context";
 import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/themes/default'
-
-import 'react-toastify/dist/ReactToastify.min.css'
 import { FormCliente } from "./components/Formulario/FormCliente";
 import { FormPlano } from "./components/Formulario/FormPlano";
 import { Planos } from "./components/Planos";
 
+import 'react-toastify/dist/ReactToastify.min.css';
 
 export function App() {
   return (
@@ -38,7 +37,6 @@ export function App() {
             </Routes>      
         </ThemeProvider>
       </ContextProvider>      
-    </BrowserRouter>
-    
+    </BrowserRouter>    
   )
 }

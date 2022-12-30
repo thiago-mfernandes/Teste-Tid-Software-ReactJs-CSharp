@@ -20,8 +20,7 @@ export const Container = styled.div<MenuProps>`
 	right: 0;
 	bottom: 0;
 	position: absolute;
-	transition: all .3s ease-in-out;
-	
+	transition: all .3s ease-in-out;	
 
 	> svg {
 		position: absolute;

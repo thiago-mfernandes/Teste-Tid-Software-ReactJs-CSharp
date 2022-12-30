@@ -72,8 +72,7 @@ export const ContainerTabela = styled.table<ContainerTabelaProps>`
 		tr {
 			text-align: center;
 			display: block;
-			width: 100%;
-			
+			width: 100%;			
 
 			th {
 				padding: 4px;
@@ -86,12 +85,10 @@ export const ContainerTabela = styled.table<ContainerTabelaProps>`
 	tbody {
 		display: block;
 		width: 100%;
-		margin: 1rem 0;
-		
+		margin: 1rem 0;		
 
 		tr {
-			width: 100%;
-			
+			width: 100%;			
 
 			td {
 				display: block;

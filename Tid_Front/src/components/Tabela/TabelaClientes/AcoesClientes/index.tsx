@@ -58,7 +58,6 @@ export function AcoesClientes({idCliente, cliente}: BotoesAcaoProps) {
 						<button onClick={() => deletarCliente(cliente.id)}>Sim</button>
 					</div>
 				</ContainerModal>
-
 			</StyledModal>
 		</ContainerTD>
 	)

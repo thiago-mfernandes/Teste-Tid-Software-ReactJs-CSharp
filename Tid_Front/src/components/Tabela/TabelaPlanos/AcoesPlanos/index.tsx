@@ -12,11 +12,9 @@ interface BotoesAcaoProps {
 	plano: Plano;
 }
 
-export function AcoesPlanos({ plano}: BotoesAcaoProps) {
-
+export function AcoesPlanos({plano}: BotoesAcaoProps) {
 	const { mostrarModal, abrirModal, fecharModal, deletarPlano } = useContext(Context);
 	let navigate = useNavigate();
-
 	
   return (
 		<ContainerTD data-label="Ações:">
@@ -48,7 +46,6 @@ export function AcoesPlanos({ plano}: BotoesAcaoProps) {
 						<button onClick={() => deletarPlano(plano.id)}>Sim</button>
 					</div>
 				</ContainerModal>
-
 			</StyledModal>
 		</ContainerTD>
 	)

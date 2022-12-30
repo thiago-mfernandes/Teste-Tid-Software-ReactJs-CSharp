@@ -3,7 +3,6 @@ import ReactModal from 'react-modal';
 
 export const ContainerTD = styled.td`
 
-
 	div {
 		display: flex;
 		flex-direction: row;
@@ -35,10 +34,8 @@ export const ContainerTD = styled.td`
 				cursor: pointer;
 			}
 		}
-}
-	
-
-`
+	}
+`;
 
 export const StyledModal = styled(ReactModal)`
   position: fixed;
@@ -98,4 +95,4 @@ export const ContainerModal = styled.div`
 			color: ${(props) => props.theme.white};
 		}
 	}
-`
+`;

@@ -67,7 +67,7 @@ export const ContainerTipoLista = styled(ContainerInput)`
     border: 1px solid ${(props) => props.theme.bgApp};
     border-radius: 8px;
     height: 2rem;
-    color: ${(props) => props.theme["cinza-fontes"]};
+    color: ${(props) => props.theme["cinza-Fontes"]};
     padding: 4px 8px 8px;
     outline: none;
 

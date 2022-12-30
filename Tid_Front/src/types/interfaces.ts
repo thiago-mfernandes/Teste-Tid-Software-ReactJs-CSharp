@@ -1,4 +1,4 @@
-import { ChangeEvent, ReactNode } from "react";
+import { ReactNode } from "react";
 
 export interface Cliente {
   id?: number | null;
@@ -17,10 +17,6 @@ export interface Plano {
 }
 
 export interface ClienteContextProps {
-  // formType: string;
-  // setFormType: React.Dispatch<React.SetStateAction<string>>;
-  // alterarTipoFormulario: (event: ChangeEvent<HTMLInputElement>) => void;
-
   clientes: Cliente[];
   setClientes: React.Dispatch<React.SetStateAction<Cliente[]>>
 

@@ -35,7 +35,6 @@ export const ContainerSection = styled.section`
 		}
 
 		svg {
-			//width: 100%;
 			margin-right: 8px;
 		}
 	}
@@ -67,15 +66,13 @@ export const ContainerTabela = styled.table<ContainerTabelaProps>`
 	thead {
 		height: 2.5rem;
 		background-color: ${(props) => props.theme["cinza-Tabela"]};
-		//border-radius: 8px;
 		display: none;
 		width: 100%;
 		
 		tr {
 			text-align: center;
 			display: block;
-			width: 100%;
-			
+			width: 100%;			
 
 			th {
 				padding: 4px;
@@ -88,12 +85,10 @@ export const ContainerTabela = styled.table<ContainerTabelaProps>`
 	tbody {
 		display: block;
 		width: 100%;
-		margin: 1rem 0;
-		
+		margin: 1rem 0;		
 
 		tr {
-			width: 100%;
-			
+			width: 100%;			
 
 			td {
 				display: block;

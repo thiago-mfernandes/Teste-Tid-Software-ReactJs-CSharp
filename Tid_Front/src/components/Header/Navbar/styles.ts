@@ -13,10 +13,10 @@ export const NavContainer = styled.nav<NavProps>`
 		overflow: hidden;		
 
 		${({ isVisible }) => isVisible && css`
-		opacity: 1;
-		overflow: hidden;
-		transition: opacity 0.8s ease-in-out 3s;
-	`}
+			opacity: 1;
+			overflow: hidden;
+			transition: opacity 0.8s ease-in-out 3s;
+		`}
 	}
 
 	li {

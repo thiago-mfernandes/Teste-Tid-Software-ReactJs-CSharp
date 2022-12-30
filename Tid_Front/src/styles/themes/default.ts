@@ -18,7 +18,4 @@ export const defaultTheme = {
   'cinza-Linha': '#d9d9d9',
 
   'cinza-escuro': '#474747' ,
-
-  // nome da cor entre aspas caso ocorra variação de luminosidade -->>
-  // 'gray-100': '#E1E1E6',
 }
