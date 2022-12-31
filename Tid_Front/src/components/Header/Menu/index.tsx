@@ -6,12 +6,21 @@ import { useState } from 'react';
 import { MenuUsuario } from '../MenuUsuario';
 
 export function Menu() {
+	window.addEventListener('resize', alterarParaDesktop);
 	const [menuIsVisible, setMenuIsVisible] = useState(false);
-	console.log("componente menu ->");
+
 	console.log(menuIsVisible);
+
 	function showMenu() {
 		setMenuIsVisible(!menuIsVisible);
 	}
+
+	function alterarParaDesktop(){
+    window.screen.width > 1023
+      ? setMenuIsVisible(true) 
+      : setMenuIsVisible(false);
+  }  
+
 
 	return (
 		<Container isVisible={menuIsVisible}>

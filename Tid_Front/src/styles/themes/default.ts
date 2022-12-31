@@ -19,3 +19,13 @@ export const defaultTheme = {
 
   'cinza-escuro': '#474747' ,
 }
+
+export const tamanhoTela = {
+  tablet: '768px',
+  desktop: '1024px'
+}
+
+export const dispositivo = {
+  tablet: `screen and (min-width: ${tamanhoTela.tablet})`,
+  desktop: `screen and (min-width: ${tamanhoTela.desktop})`,
+}

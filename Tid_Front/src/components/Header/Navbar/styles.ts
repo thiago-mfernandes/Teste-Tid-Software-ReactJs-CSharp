@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { dispositivo } from "../../../styles/themes/default";
 
 interface NavProps {
 	isVisible: boolean
@@ -6,6 +7,10 @@ interface NavProps {
 
 export const NavContainer = styled.nav<NavProps>`
   margin: 1.5rem 0;
+
+	@media ${dispositivo.desktop} {
+		margin: 1rem 0;
+	}
   
 	ul {
 		list-style: none;

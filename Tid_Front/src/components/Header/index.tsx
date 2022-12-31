@@ -1,9 +1,10 @@
 import { Menu } from './Menu'
+import { Container } from './styles'
 
 export function Header() {      
   return (
-    <header>
+    <Container>
       <Menu />
-    </header>
+    </Container>
   )
 }
