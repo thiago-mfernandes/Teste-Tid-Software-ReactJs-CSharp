@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { dispositivo } from "../../../styles/themes/default";
 
 export const Container = styled.div`
 	display: flex;
@@ -24,6 +25,10 @@ export const BoxUsuario = styled.div`
 
 		h2, span {
 			font-size: 0.75rem;
+
+			@media ${dispositivo.desktop} {
+				font-size: 0.65rem;
+			}
 		}
 	}
 `
@@ -36,9 +41,17 @@ export const BoxInfo = styled.div`
 	width: 70%;
 	margin: 0.5rem 0;
 
+	@media ${dispositivo.desktop} {
+		width: 90%;
+	}
+
 	h2, span {
 		font-size: 0.75rem;
 		font-weight: lighter;
+
+		@media ${dispositivo.desktop} {
+			font-size: 0.65rem;
+		}
 	}
 
 	// essa fonte nao tem esse caractere!
@@ -55,6 +68,10 @@ export const BoxGrafico = styled.div`
 	border-radius: 16px;
 	border: 0;
 	margin-bottom: 1.5rem;
+
+	@media ${dispositivo.desktop} {
+			width: 90%;
+	}
 
 	div {
 		width: 80%;
@@ -77,4 +94,16 @@ export const BotaoEditar = styled.button`
 	width: 70%;
 	height: 2rem;
 	color: ${(props) => props.theme.roxo};
+
+	@media ${dispositivo.desktop} {
+		width: 90%;
+		transition: all .3s ease-in-out;
+		&:hover {
+			background-color: ${(props) => props.theme.roxo};
+			color: ${(props) => props.theme.white}
+		}
+		&:active {
+			opacity: 0.7;
+		}
+	}
 `

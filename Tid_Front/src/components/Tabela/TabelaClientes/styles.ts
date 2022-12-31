@@ -1,11 +1,14 @@
 import styled from "styled-components";
+import { dispositivo } from "../../../styles/themes/default";
 
 export const ContainerSection = styled.section`
   background-color: ${(props) => props.theme.white};
 	border-radius: 8px;
 	padding: 16px;
-	table-layout: fixed;
-	word-wrap: break-word;
+
+	@media ${dispositivo.desktop} {
+		margin-top: 6rem;
+	}
 
 	h2 {
 		font-size: 1.125rem;
@@ -34,6 +37,11 @@ export const ContainerSection = styled.section`
 			opacity: 0.8;
 		}
 
+		@media ${dispositivo.desktop} {
+			width: 15rem;
+			margin-bottom: 1rem;
+		}
+
 		svg {
 			margin-right: 8px;
 		}
@@ -51,29 +59,56 @@ export const ContainerSection = styled.section`
 		&::placeholder {
 			font-size: 0.875rem;
 		}
+
+		@media ${dispositivo.desktop} {
+			width: 50%;
+			margin-bottom: 1.5rem;
+		}
 	}
 `
-
 export const ContainerTabela = styled.table`
 	background-color: ${(props) => props.theme["cinza-Tabela"]};
 	border-radius: 8px;
 	display: block;
+	table-layout: fixed;
+	word-wrap: break-word;
+	
+	@media ${dispositivo.desktop} {
+		display: flex;
+		flex-direction: column;
+		//overflow:hidden para o border-radius aparecer;
+		overflow: hidden;
+	}
 
 	thead {
 		height: 2.5rem;
 		background-color: ${(props) => props.theme["cinza-Tabela"]};
 		display: none;
 		width: 100%;
+		@media ${dispositivo.desktop} {
+			display: flex;
+			height: 2.5rem;
+		}
 		
 		tr {
 			text-align: center;
 			display: block;
 			width: 100%;			
+			@media ${dispositivo.desktop} {
+				background-color: ${(props) => props.theme["cinza-Destaque"]};
+				color: ${(props) => props.theme.white};
+				display: flex;
+				align-items: center;
+				flex-wrap: nowrap;
+			}
 
 			th {
 				padding: 4px;
 				vertical-align: middle;
 				width: 100%;
+				@media ${dispositivo.desktop} {
+					font-size: 0.75rem;
+				}
 			}
 		}
 	}
@@ -81,11 +116,21 @@ export const ContainerTabela = styled.table`
 	tbody {
 		display: block;
 		width: 100%;
-		margin: 1rem 0;		
+		margin: 1rem 0;	
+
+		@media ${dispositivo.desktop} {
+			margin: 0.01rem 0;
+		}	
 
 		tr {
 			width: 100%;
-			display: block;			
+			display: block;	
+			@media ${dispositivo.desktop} {
+				display: flex;
+				&:first-of-type {
+					border-top: 5px solid ${(props) => props.theme.white};
+				}
+			}		
 
 			td {
 				display: block;
@@ -112,6 +157,24 @@ export const ContainerTabela = styled.table`
 					text-align: left;
 					vertical-align: middle;
         }
+				
+				@media ${dispositivo.desktop} {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					text-overflow: ellipsis;
+					font-size: .75rem;
+					padding: 0.75%;
+					text-align: center;
+					vertical-align: middle;
+					&::before {
+						content: ""
+					}
+					&:last-of-type {
+						border-bottom: 5px solid ${(props) => props.theme.white};
+						width: 100%;
+					}
+				}
 			}
 		}	
 	}

@@ -6,17 +6,25 @@ import { useState } from 'react';
 import { MenuUsuario } from '../MenuUsuario';
 
 export function Menu() {
-	window.addEventListener('resize', alterarParaDesktop);
+	window.addEventListener('resize', function() {
+		alterarParaDesktop()
+	});
+	
 	const [menuIsVisible, setMenuIsVisible] = useState(false);
-
+	
 	console.log(menuIsVisible);
-
+	
 	function showMenu() {
 		setMenuIsVisible(!menuIsVisible);
 	}
-
+	
 	function alterarParaDesktop(){
-    window.screen.width > 1023
+		var larguraTela = window.innerWidth
+		|| document.documentElement.clientWidth
+		|| document.body.clientWidth;
+    
+		console.log(larguraTela);
+		larguraTela > 1023
       ? setMenuIsVisible(true) 
       : setMenuIsVisible(false);
   }  

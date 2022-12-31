@@ -7,6 +7,6 @@ export const Container = styled.header`
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    width: 20%;
+    width: 17.5%;
   }
 `

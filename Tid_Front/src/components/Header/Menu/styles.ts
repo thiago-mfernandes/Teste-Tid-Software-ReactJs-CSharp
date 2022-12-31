@@ -36,8 +36,8 @@ export const Container = styled.div<MenuProps>`
 		flex-direction: column;
 		padding: 1rem;
 		border-radius: 0px;
-		box-shadow: 0px 8px 8px rgba(109, 108, 108, 0.8);
-		background-color: ${(props) => props.theme["azul-claro"]};
+		box-shadow: none;
+		background-color: ${(props) => props.theme.bgApp};
 		width: 100%;
 		height: 100vh;
 		overflow: unset;

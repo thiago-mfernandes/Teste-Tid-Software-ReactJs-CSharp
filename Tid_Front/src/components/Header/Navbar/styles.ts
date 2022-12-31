@@ -31,11 +31,19 @@ export const NavContainer = styled.nav<NavProps>`
 
 		svg {
 			margin-right: 0.25rem;
+
+			@media ${dispositivo.desktop} {
+				margin-right: 1.25rem;
+			}
 		}
 
 		a {
 			text-decoration: none;
 			font-size: 0.95rem;
+
+			@media ${dispositivo.desktop} {
+				font-size: 0.75rem;
+			}
 		}
 	}
 
