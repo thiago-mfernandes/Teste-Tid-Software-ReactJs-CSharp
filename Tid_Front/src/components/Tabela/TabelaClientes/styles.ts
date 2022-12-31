@@ -84,12 +84,13 @@ export const ContainerTabela = styled.table`
 		margin: 1rem 0;		
 
 		tr {
-			width: 100%;			
+			width: 100%;
+			display: block;			
 
 			td {
 				display: block;
-				width: 224%;
-				padding: 10% 5% 10% 10%;
+				width: 100%;
+				padding: 5%;
 				text-align: right;
 				position: relative;
 				border-bottom: 5px solid ${(props) => props.theme.white};
@@ -97,7 +98,7 @@ export const ContainerTabela = styled.table`
 				font-weight: bold;
 				&:last-of-type {
 					border-bottom: 5px solid ${(props) => props.theme.roxo};
-					width: 224%;
+					width: 100%;
 				}
 				
 				&::before {

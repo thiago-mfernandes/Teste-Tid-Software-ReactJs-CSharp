@@ -71,6 +71,7 @@ export const ContainerTipoLista = styled(ContainerInput)`
     color: ${(props) => props.theme["cinza-Fontes"]};
     padding: 4px 8px 8px;
     outline: none;
+    margin-bottom: 2rem;
 
     &:focus {
       padding: 4px 8px 8px;

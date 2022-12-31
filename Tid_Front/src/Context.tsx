@@ -26,8 +26,6 @@ export function ContextProvider({children}: ContextProviderProps) {
   useEffect(() => {
     api.get("/Cliente")
       .then((response) => setClientes(response.data))
-      console.log("context, obter todos os clientes");
-      console.log(clientes);
   }, []) 
 
   //obter todos os planos
@@ -60,10 +58,7 @@ export function ContextProvider({children}: ContextProviderProps) {
       telefone: cliente.telefone,
       planoId: cliente.planoId
     }
-
-    console.log("funcao adicionarCliente =>");
-    console.log(clienteForm);
-
+    
     //atualmente, aqui eh onde roda meu json-server: "http://localhost:3333/"
     await api
       //na rota de clientes, enviar o objeto

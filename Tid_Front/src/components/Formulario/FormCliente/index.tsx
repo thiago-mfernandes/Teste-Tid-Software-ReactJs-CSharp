@@ -4,6 +4,7 @@ import { Context } from "../../../Context";
 import { Link, useParams } from "react-router-dom";
 import { ContainerForm, ContainerInput, ContainerTipoLista } from "./styles";
 import { Erro } from "../Erro";
+import InputMask from "react-input-mask";
 
 type Inputs = {
   nome: string,
@@ -69,8 +70,9 @@ export function FormCliente() {
       </ContainerInput>
       <ContainerInput>
         <label htmlFor="cpf">CPF</label>
-        <input 
-          type="number" 
+        <InputMask 
+          mask="999.999.999-99"
+          type="text" 
           id="cpf"
           placeholder="000.000.00-00"
           {...register("cpf", { required: true })}
@@ -94,8 +96,9 @@ export function FormCliente() {
       </ContainerTipoLista>
       <ContainerInput>
         <label htmlFor="telefone">Telefone</label>
-        <input 
-          type="number" 
+        <InputMask 
+          mask="(99)99999-9999"
+          type="text" 
           id="telefone"
           placeholder="(00) 0 0000-0000"
           {...register("telefone", { required: true })}
