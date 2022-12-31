@@ -8,8 +8,6 @@ import { ContainerSection, ContainerTabela } from "./styles";
 export function TabelaClientes() {
 
 	const { clientes } = useContext(Context);
-	console.log("tabelaClientes =>")
-	console.log(clientes);
 
 	const[busca, setBusca] = useState("");
 
@@ -51,7 +49,7 @@ export function TabelaClientes() {
               <th>Nome</th>
               <th>Última Visita</th>
               <th>Sexo</th>
-							<th>Plano</th>
+							<th>Tipo de Plano</th>
               <th>Preço</th>
               <th>Visitas</th>
               <th>Ações</th>
@@ -70,8 +68,8 @@ export function TabelaClientes() {
 									<td data-label="Nome:">{cliente.nome}</td>
 									<td data-label="Última Visita:">{mostrarDataFormatada(cliente.ultima_visita)}</td>
 									<td data-label="Sexo:">{cliente.genero}</td>
-									<td data-label="Plano:">{cliente.filiacao}</td>
-									<td data-label="Preço:">{cliente.preco}</td>
+									<td data-label="Tipo de Plano:">{cliente.filiacao}</td>
+									<td data-label="Preço:">R$ {cliente.preco},00</td>
 									{/**Em um projeto concluido, o modulo de agendamento alimentaria a quantidade de visitas realizadas pelo cliente. */}
 									<td data-label="Visitas:">{gerarNumeroDeVisitasAleatoriamente(1, 50)}</td>
 									<AcoesClientes idCliente={cliente.id} cliente={cliente} />

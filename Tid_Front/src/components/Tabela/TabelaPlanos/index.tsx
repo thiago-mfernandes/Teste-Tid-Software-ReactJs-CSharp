@@ -30,7 +30,7 @@ export function TabelaPlanos() {
 			<ContainerTabela variant={busca}>
 				<thead>
 					<tr>
-						<th>Filiação</th>
+						<th>Tipo de Plano</th>
 						<th>Preço</th>
 					</tr>
 				</thead>
@@ -44,8 +44,8 @@ export function TabelaPlanos() {
 							}
 						}).map((plano) => (
 							<tr key={plano.id}>
-								<td data-label="Filiação:">{plano.filiacao}</td>
-								<td data-label="Preço:">{plano.preco}</td>
+								<td data-label="Tipo de Plano:">{plano.filiacao}</td>
+								<td data-label="Preço:">R$ {plano.preco},00</td>
 								<AcoesPlanos plano={plano} />
 							</tr>
 						))

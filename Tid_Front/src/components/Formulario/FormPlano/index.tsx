@@ -43,10 +43,11 @@ export function FormPlano() {
     >
 
       <ContainerInput>
-        <label htmlFor="filiacao">Filiação</label>
+        <label htmlFor="filiacao">Tipo de Plano:</label>
         <input 
           type="text" 
           id="filiacao"
+          placeholder="Inform o tipo de plano.."
           {...register("filiacao", { required: true })}
         />
         {errors.filiacao && <Erro />}
@@ -56,6 +57,7 @@ export function FormPlano() {
         <input 
           type="number" 
           id="preco"
+          placeholder="R$..."
           {...register("preco", { required: true })}
         />
         {errors.preco && <Erro />}

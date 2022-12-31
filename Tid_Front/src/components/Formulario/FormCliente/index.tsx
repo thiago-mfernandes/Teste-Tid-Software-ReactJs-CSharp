@@ -22,8 +22,6 @@ export function FormCliente() {
   const { adicionarCliente, cliente, editarCliente, obterClienteId, planos } = useContext(Context);
  
   async function onSubmit(data: Object) {
-    console.log("formCliente, funcao onSubmit =>");
-    console.log(data);
     if(id) {
       await editarCliente(parseInt(id), data);
     } else {
