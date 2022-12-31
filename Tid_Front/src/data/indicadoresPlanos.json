@@ -1,0 +1,22 @@
+[
+  {
+      "id": 1,
+      "icon": "totalPlanos",
+      "titulo": "Total de Planos"
+  },
+  {
+      "id": 2,
+      "icon": "maisAderido",
+      "titulo": "Plano Mais Aderido"
+  },
+  {
+      "id": 3,
+      "icon": "ticket",
+      "titulo": "Ticket Médio"
+  },
+  {
+      "id": 4,
+      "icon": "aulasGratis",
+      "titulo": "Aulas grátis este mês"
+  }
+]

@@ -1,12 +1,12 @@
 import { CardIndicador, Container } from "./styles";
 import { UsersFour, Medal, Plus, MinusCircle, CircleNotch } from 'phosphor-react';
-import data from '../../data/indicadores.json';
+import data from '../../data/indicadoresClientes.json';
 import { useContext } from "react";
 import { Context } from "../../Context";
 import { intervalToDuration } from "date-fns";
 
 
-export function Indicadores() {
+export function IndicadoresClientes() {
 
 	const { clientes } = useContext(Context);
 

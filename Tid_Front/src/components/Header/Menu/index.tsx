@@ -12,8 +12,6 @@ export function Menu() {
 	
 	const [menuIsVisible, setMenuIsVisible] = useState(false);
 	
-	console.log(menuIsVisible);
-	
 	function showMenu() {
 		setMenuIsVisible(!menuIsVisible);
 	}
@@ -23,7 +21,6 @@ export function Menu() {
 		|| document.documentElement.clientWidth
 		|| document.body.clientWidth;
     
-		console.log(larguraTela);
 		larguraTela > 1023
       ? setMenuIsVisible(true) 
       : setMenuIsVisible(false);
