@@ -12,6 +12,5 @@ export const Container = styled.section`
         right: 0;
         width: 82.5%;
         margin-top: 1.5rem;
-        //height: 100vh;
     }
 `

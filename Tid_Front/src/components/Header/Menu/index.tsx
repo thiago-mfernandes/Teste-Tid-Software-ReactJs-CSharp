@@ -5,27 +5,20 @@ import { Navbar } from '../Navbar'
 import { useState } from 'react';
 import { MenuUsuario } from '../MenuUsuario';
 
-export function Menu() {
-	window.addEventListener('resize', function() {
-		alterarParaDesktop()
-	});
+export function Menu() {	
 	
 	const [menuIsVisible, setMenuIsVisible] = useState(false);
+	console.log(menuIsVisible);	
 	
+	setInterval(function() {
+		if(document.body.clientWidth > 1023) {
+			setMenuIsVisible(true);
+		} 
+	}, 100)
+
 	function showMenu() {
 		setMenuIsVisible(!menuIsVisible);
 	}
-	
-	function alterarParaDesktop(){
-		var larguraTela = window.innerWidth
-		|| document.documentElement.clientWidth
-		|| document.body.clientWidth;
-    
-		larguraTela > 1023
-      ? setMenuIsVisible(true) 
-      : setMenuIsVisible(false);
-  }  
-
 
 	return (
 		<Container isVisible={menuIsVisible}>

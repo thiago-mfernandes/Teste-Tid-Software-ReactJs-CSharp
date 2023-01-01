@@ -1,5 +1,5 @@
 import { CardIndicador, Container } from "./styles";
-import { UsersFour, Medal, Plus, MinusCircle, CircleNotch } from 'phosphor-react';
+import { CirclesFour, ThumbsUp, CircleNotch, Coins, Smiley } from 'phosphor-react';
 import data from '../../data/indicadoresPlanos.json';
 import { useContext } from "react";
 import { Context } from "../../Context";
@@ -26,33 +26,36 @@ export function IndicadoresPlanos() {
 
 	// console.log(planosAnalisados);
 
-	function planoMaisAderido() {
-		// cada plano
-		planosAnalisados.forEach((plano) => {
-			// é comparado em cada cliente
-			clientes.forEach(cliente => {
-				if(plano.filiacao === cliente.filiacao) {
-					// se o plano e cliente for true, a chave acumuladora é acrescentada
-					plano.clientesNestePlano = plano.clientesNestePlano + 1;
-				}
-			});
-		})
+	// funcao precisa ser debugada
 
-		console.log(planosAnalisados);
+	
+	// function planoMaisAderido() {
+	// 	// cada plano
+	// 	planosAnalisados.forEach((plano) => {
+	// 		// é comparado em cada cliente
+	// 		clientes.forEach(cliente => {
+	// 			if(plano.filiacao === cliente.filiacao) {
+	// 				// se o plano e cliente for true, a chave acumuladora é acrescentada
+	// 				plano.clientesNestePlano = plano.clientesNestePlano + 1;
+	// 			}
+	// 		});
+	// 	})
 
-		planosAnalisados.sort(function(a,b) {
-			if(a.clientesNestePlano > b.clientesNestePlano) {
-				return -1;
-			} else {
-				return true;
-			}
-		})
-		console.log(planosAnalisados);
-		const { filiacao } = planosAnalisados[0];
+	// 	console.log(planosAnalisados);
 
-		console.log(filiacao);
-		return filiacao;
-	}
+	// 	planosAnalisados.sort(function(a,b) {
+	// 		if(a.clientesNestePlano > b.clientesNestePlano) {
+	// 			return -1;
+	// 		} else {
+	// 			return true;
+	// 		}
+	// 	})
+	// 	console.log(planosAnalisados);
+	// 	const { filiacao } = planosAnalisados[0];
+
+	// 	console.log(filiacao);
+	// 	return filiacao;
+	// }
 
 	function ticketMedio() {
 		let acumulador = 0;		
@@ -94,13 +97,13 @@ export function IndicadoresPlanos() {
 	function handleIcon(iconName: string) {
     switch (iconName) {
     case 'totalPlanos':
-      return <UsersFour size={24} />;
+      return <CirclesFour size={24} />;
     case 'maisAderido':
-      return <Medal size={24} />;
+      return <ThumbsUp size={24} />;
     case 'ticket':
-      return <Plus size={24} />;
+      return <Coins size={24} />;
 		case 'aulasGratis':
-      return <MinusCircle size={24} />;
+      return <Smiley size={24} />;
     default:
       return <CircleNotch size={24} />;
     }

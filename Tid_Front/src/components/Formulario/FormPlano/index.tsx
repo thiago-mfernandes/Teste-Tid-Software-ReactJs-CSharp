@@ -64,11 +64,9 @@ export function FormPlano() {
       </ContainerInput>     
 
       <button type="submit" name="Salvar">Salvar</button>
-      <Link to="/Planos">
-        <button type="reset" name="cancelar">
-          Cancelar
-        </button>
-      </Link>
+      <button type="reset" name="cancelar">
+          <Link to="/Planos">Cancelar</Link>
+      </button> 
     </ContainerForm>
   )
 }

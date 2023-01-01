@@ -4,6 +4,8 @@ export const defaultTheme = {
   bgApp: '#F1F2F5',
   roxo: '#5E60CE',
 
+  amarelo: '#FBA94C',
+
   azul: '#4EA8DE',
   'azul-claro': '#e3f2fd',
   'azul-25': 'rgba(78,168,222,25%)',

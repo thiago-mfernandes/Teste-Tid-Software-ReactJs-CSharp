@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ReactModal from 'react-modal';
+import { dispositivo } from "../../../../styles/themes/default";
 
 export const ContainerTD = styled.td`
 
@@ -45,7 +46,7 @@ export const StyledModal = styled(ReactModal)`
   left: 0;
   display: flex;
   justify-content: center;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.2);
   overflow-x: hidden;
   overflow-y: auto;
   padding: 2rem;
@@ -68,6 +69,10 @@ export const ContainerModal = styled.div`
 	height: 10rem;
 	border-radius: 8px;
 	padding: 2rem 1.25rem;
+
+	@media ${dispositivo.desktop} {
+		width: 30%;
+	}
 
 	h2 {
 		width: 100%;

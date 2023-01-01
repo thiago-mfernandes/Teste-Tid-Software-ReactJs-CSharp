@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { dispositivo } from "../../../styles/themes/default";
 
 export const ContainerForm = styled.form`
   display: flex;
@@ -7,7 +8,19 @@ export const ContainerForm = styled.form`
   padding: 1.25rem;
   background-color: ${(props) => props.theme.white};
 	border-radius: 8px;
-  
+
+  @media ${dispositivo.desktop} {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 78.5%;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }  
 
   button {
     background-color: ${(props) => props.theme.roxo};
@@ -24,6 +37,20 @@ export const ContainerForm = styled.form`
 		&:active {
 			opacity: 0.8;
 		}
+
+    @media ${dispositivo.desktop} {      
+      width: 47.5%;      
+    }
+  }
+
+  a {
+    width: 100%;
+    height: 100%;
+    color: ${(props) => props.theme.white};
+    padding-top: 4px;
+    @media ${dispositivo.desktop} {
+      color: ${(props) => props.theme.white};
+    }
   }
 `
 
@@ -33,6 +60,10 @@ export const ContainerInput = styled.div`
   width: 100%;
   &:last-of-type {
     margin-bottom: 2rem;
+  }
+
+  @media ${dispositivo.desktop} {
+    width: 47.5%;
   }
 
   label {

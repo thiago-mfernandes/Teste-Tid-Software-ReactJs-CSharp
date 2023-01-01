@@ -124,12 +124,10 @@ export function FormCliente() {
         {errors.planoId && <Erro />}
       </ContainerTipoLista>
 
-      <button type="submit" name="Salvar">Salvar</button>      
-      <Link to="/Clientes">
-        <button type="reset" name="cancelar">
-          Cancelar
-        </button>
-      </Link>
+      <button type="submit" name="Salvar">Salvar</button>  
+      <button type="reset" name="cancelar">
+          <Link to="/Clientes">Cancelar</Link>
+      </button> 
     </ContainerForm>
   )
 }
