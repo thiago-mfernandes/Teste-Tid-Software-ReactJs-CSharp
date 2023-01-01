@@ -3,8 +3,6 @@ import { UsersFour, Medal, Plus, MinusCircle, CircleNotch } from 'phosphor-react
 import data from '../../data/indicadoresPlanos.json';
 import { useContext } from "react";
 import { Context } from "../../Context";
-import { intervalToDuration } from "date-fns";
-import { Plano } from "../../types/interfaces";
 
 
 export function IndicadoresPlanos() {
@@ -13,21 +11,24 @@ export function IndicadoresPlanos() {
 
 	const totalPlanos = planos.length;
 
+	
 	//crio um novo array:
-	var quantidadePlanos = new Array();
+	let planosAnalisados = new Array();
 	//meu array contem objetos para cada tipo de plano e uma chave para acumular a contagem
 	planos.forEach(plano => {
 		var membership = {
 			filiacao: plano.filiacao,
-			clientesNestePlano: 0
+			clientesNestePlano: 0,
 		}
 		// criado um objeto para cada plano
-		quantidadePlanos.push(membership);
+		planosAnalisados.push(membership);
 	});
+
+	// console.log(planosAnalisados);
 
 	function planoMaisAderido() {
 		// cada plano
-		quantidadePlanos.forEach((plano) => {
+		planosAnalisados.forEach((plano) => {
 			// é comparado em cada cliente
 			clientes.forEach(cliente => {
 				if(plano.filiacao === cliente.filiacao) {
@@ -37,66 +38,54 @@ export function IndicadoresPlanos() {
 			});
 		})
 
-		quantidadePlanos.sort(function(a,b) {
+		console.log(planosAnalisados);
+
+		planosAnalisados.sort(function(a,b) {
 			if(a.clientesNestePlano > b.clientesNestePlano) {
 				return -1;
 			} else {
 				return true;
 			}
 		})
-		
-		return quantidadePlanos[0];
+		console.log(planosAnalisados);
+		const { filiacao } = planosAnalisados[0];
+
+		console.log(filiacao);
+		return filiacao;
 	}
 
-	var planoMaisAderidoOrdenado = planoMaisAderido()
-	var x = planoMaisAderidoOrdenado.clientesNestePlano;
-	console.log(x);
+	function ticketMedio() {
+		let acumulador = 0;		
+		clientes.forEach(cliente => {
+			// console.log(cliente)
+			if(cliente.preco) {
+				acumulador = acumulador + cliente.preco;
+			}
+		});
+		return (acumulador / clientes.length).toFixed(0);
+	}
 
-	//console.log(quantidadePlanos)
-	//const planoMaisAderido = 
-
-	// const planoMaisAderido = clientes.reduce((acumulador, cliente): any => {
-	// 	// plano entre 0 e 3
-	// 	if(cliente.) {
-	// 		return acumulador + 1;
-	// 	}
-		
-	// 	return acumulador;
-	// }, 0);
-	
-	// const ticketMedio = planos.reduce((acumulador, cliente):any => {  
-	// 	const { days } = intervalToDuration({
-	// 		start: new Date(cliente.ultima_visita),
-	// 		end: new Date()
-	// 	});
-	// 	// Novos visitantes são considerados quando cadastrados nos ultimos 7 dias..
-	// 	if (days <= 7){
-	// 		return acumulador + 1;
-	// 	}
-
-	// 	return acumulador;
-	// }, 0);
- 
-	// const totalAulasGratis = planos.reduce((acumulador, cliente):any => {
-	// 	// Cliente com aula gratis e sem plano..
-	// 	if(cliente.planoId >= 0 && cliente.planoId > 4) {
-	// 		return acumulador + 1;
-	// 	}
-
-	// 	return acumulador;
-	// }, 0);
-	
+	function aulasGratis() {
+		let acumulador = 0;
+		clientes.forEach(cliente => {
+			if(cliente.preco == 0) {
+				acumulador += 1;
+			}
+		})
+		return acumulador;
+	}	
 
 	function mostrarIndicadores(tituloIndicador: string) {
 		switch(tituloIndicador){
 			case 'Total de Planos':
 				return totalPlanos;
 			case 'Plano Mais Aderido':
-				//return planoMaisAderido;
+				// return planoMaisAderido();
+				return 'Light'
 			case 'Ticket Médio':
-				//return ticketMedio;
+				return `R$ ${ticketMedio()},00`;
 			case 'Aulas grátis este mês':
-				//return totalAulasGratis;
+				return aulasGratis();
 			default:
 				return 0;
 		}
