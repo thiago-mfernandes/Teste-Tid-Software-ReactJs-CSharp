@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { dispositivo } from "../../styles/themes/default";
+import { motion } from 'framer-motion'
 
-export const Container = styled.header`
+export const Container = styled(motion.header)`
 
   @media ${dispositivo.desktop} {
     display: flex;

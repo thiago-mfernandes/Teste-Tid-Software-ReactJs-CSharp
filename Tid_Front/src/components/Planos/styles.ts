@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { dispositivo } from "../../styles/themes/default";
+import { motion } from 'framer-motion'
 
-export const Container = styled.section`
+export const Container = styled(motion.section)`
     margin-top: 7rem;
     padding: 0 1.25rem;
     overflow: hidden;

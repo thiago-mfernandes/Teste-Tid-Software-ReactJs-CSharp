@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import ReactModal from 'react-modal';
+import { dispositivo } from "../../../../styles/themes/default";
+import { motion } from "framer-motion"
 
 export const ContainerTD = styled.td`
 
@@ -52,7 +54,7 @@ export const StyledModal = styled(ReactModal)`
   z-index: 99999;
 `;
 
-export const ContainerModal = styled.div`
+export const ContainerModal = styled(motion.div)`
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -68,6 +70,10 @@ export const ContainerModal = styled.div`
 	height: 10rem;
 	border-radius: 8px;
 	padding: 2rem 1.25rem;
+
+	@media ${dispositivo.desktop} {
+		width: 30%;
+	}
 
 	h2 {
 		width: 100%;

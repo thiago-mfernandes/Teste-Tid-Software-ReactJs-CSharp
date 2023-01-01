@@ -50,7 +50,12 @@ export function AcoesClientes({idCliente, cliente}: BotoesAcaoProps) {
 				onRequestClose={fecharModal}
 				contentLabel="Cliente"
 			>
-				<ContainerModal>
+				<ContainerModal
+					initial={{ scale: 0.3, opacity: 0, x: "-100%"}} 
+					animate={{ scale: 1, opacity: 1, x: "0%"}}
+					transition={{duration: 0.75, ease: "easeInOut"}}
+					exit={{ scale: 0, opacity: 1, x: "-100%" }}
+				>
 					<h2>Deseja excluir este Cliente?</h2>
 					<hr />
 					<div>

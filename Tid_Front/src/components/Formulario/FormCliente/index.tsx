@@ -46,6 +46,10 @@ export function FormCliente() {
     <ContainerForm 
       onSubmit={handleSubmit(onSubmit)} 
       method="POST"
+      initial={{y: "-100%"}} 
+			animate={{y: "0%"}}
+			transition={{duration: 0.75, ease: "easeInOut"}}
+			exit={{ opacity: 1 }}
     >
 
       <ContainerInput>

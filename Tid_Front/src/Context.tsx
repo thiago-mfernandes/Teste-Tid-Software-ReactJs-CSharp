@@ -2,10 +2,11 @@ import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "./services/api";
-import { Cliente, ClienteContextProps, ContextProviderProps, Plano } from './types/interfaces'
+import { Cliente, ClienteContextProps, ContextProviderProps, Plano } from "./types/interfaces"
 
 
 export const Context = createContext<ClienteContextProps>({} as ClienteContextProps);
+
 export function ContextProvider({children}: ContextProviderProps) {
 
   const FORM_TYPES = {

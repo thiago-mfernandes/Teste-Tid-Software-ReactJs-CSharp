@@ -8,7 +8,6 @@ import { MenuUsuario } from '../MenuUsuario';
 export function Menu() {	
 	
 	const [menuIsVisible, setMenuIsVisible] = useState(false);
-	console.log(menuIsVisible);	
 	
 	setInterval(function() {
 		if(document.body.clientWidth > 1023) {

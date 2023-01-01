@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { dispositivo } from "../../../styles/themes/default";
+import { motion } from 'framer-motion'
 
-export const ContainerForm = styled.form`
+export const ContainerForm = styled(motion.form)`
   display: flex;
   flex-direction: column;
   margin: 9rem 1.25rem 2rem;

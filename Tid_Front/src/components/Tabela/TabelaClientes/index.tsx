@@ -27,7 +27,11 @@ export function TabelaClientes() {
 	}
 
   return (
-		<ContainerSection>
+		<ContainerSection
+			initial={{opacity: 0}} 
+			animate={{opacity: 1}}
+			exit={{opacity: 0}}
+		>
 			<h2>Clientes</h2>
 			<Link to="/Clientes/Formulario">
 				<button>

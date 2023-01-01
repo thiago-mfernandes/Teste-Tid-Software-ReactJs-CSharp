@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ReactModal from 'react-modal';
 import { dispositivo } from "../../../../styles/themes/default";
+import { motion } from "framer-motion"
 
 export const ContainerTD = styled.td`
 
@@ -53,7 +54,7 @@ export const StyledModal = styled(ReactModal)`
   z-index: 99999;
 `;
 
-export const ContainerModal = styled.div`
+export const ContainerModal = styled(motion.div)`
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;

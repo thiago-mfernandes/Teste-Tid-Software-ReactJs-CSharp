@@ -11,7 +11,11 @@ export function TabelaPlanos() {
 	const[busca, setBusca] = useState("");
 
   return (
-		<ContainerSection>
+		<ContainerSection
+			initial={{opacity: 0}} 
+			animate={{opacity: 1}}
+			exit={{opacity: 0}}
+		>
 			<h2>Planos</h2>
 			<Link to="/Planos/Formulario">
 				<button>

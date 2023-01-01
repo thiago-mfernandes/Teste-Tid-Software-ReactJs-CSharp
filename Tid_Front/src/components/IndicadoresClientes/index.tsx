@@ -75,7 +75,11 @@ export function IndicadoresClientes() {
   }
 	
   return (
-		<Container>
+		<Container
+			initial={{opacity: 0}} 
+			animate={{opacity: 1}}
+			exit={{opacity: 0}}
+		>
 			{data.map((item) => (
 				<CardIndicador key={item.id}>
 					<div>

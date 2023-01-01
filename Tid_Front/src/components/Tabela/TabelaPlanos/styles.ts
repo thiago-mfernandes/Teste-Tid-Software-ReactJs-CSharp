@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { dispositivo } from "../../../styles/themes/default";
+import { motion } from "framer-motion"
 
-export const ContainerSection = styled.section`
+export const ContainerSection = styled(motion.section)`
   background-color: ${(props) => props.theme.white};
 	border-radius: 8px;
 	padding: 16px;
