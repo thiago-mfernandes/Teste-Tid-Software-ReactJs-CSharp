@@ -8,54 +8,35 @@ import { Context } from "../../Context";
 export function IndicadoresPlanos() {
 
 	const { planos, clientes } = useContext(Context);
-
 	const totalPlanos = planos.length;
 
-	
+	function planoMaisAderido() {
 	//crio um novo array:
-	let planosAnalisados = new Array();
+	const planosAnalisados = new Array();
 	//meu array contem objetos para cada tipo de plano e uma chave para acumular a contagem
 	planos.forEach(plano => {
-		var membership = {
-			filiacao: plano.filiacao,
-			clientesNestePlano: 0,
-		}
 		// criado um objeto para cada plano
-		planosAnalisados.push(membership);
+			planosAnalisados.push({
+				filiacao: plano.filiacao,
+				clientesNestePlano: 0,
+			});
 	});
 
-	// console.log(planosAnalisados);
-
-	// funcao precisa ser debugada
-
-	
-	// function planoMaisAderido() {
-	// 	// cada plano
-	// 	planosAnalisados.forEach((plano) => {
-	// 		// é comparado em cada cliente
-	// 		clientes.forEach(cliente => {
-	// 			if(plano.filiacao === cliente.filiacao) {
-	// 				// se o plano e cliente for true, a chave acumuladora é acrescentada
-	// 				plano.clientesNestePlano = plano.clientesNestePlano + 1;
-	// 			}
-	// 		});
-	// 	})
-
-	// 	console.log(planosAnalisados);
-
-	// 	planosAnalisados.sort(function(a,b) {
-	// 		if(a.clientesNestePlano > b.clientesNestePlano) {
-	// 			return -1;
-	// 		} else {
-	// 			return true;
-	// 		}
-	// 	})
-	// 	console.log(planosAnalisados);
-	// 	const { filiacao } = planosAnalisados[0];
-
-	// 	console.log(filiacao);
-	// 	return filiacao;
-	// }
+	// cada plano
+	planosAnalisados.forEach((plano) => {
+		// é comparado em cada cliente
+		clientes?.forEach(cliente => {
+			if (plano.filiacao === cliente.filiacao) {
+				// se o plano e cliente for true, a chave acumuladora é acrescentada
+				plano.clientesNestePlano = plano.clientesNestePlano + 1;
+			}
+		});
+	})
+	// ordenacao para obter o mais aderido na primeira posicao
+	planosAnalisados.sort((a, b) => a.clientesNestePlano > b.clientesNestePlano ? -1 : 1);
+	// se houver array e se houver algo na primeira posicao, o valor será retornado
+	return planosAnalisados?.[0]?.filiacao;
+	}
 
 	function ticketMedio() {
 		let acumulador = 0;		
@@ -83,8 +64,7 @@ export function IndicadoresPlanos() {
 			case 'Total de Planos':
 				return totalPlanos;
 			case 'Plano Mais Aderido':
-				// return planoMaisAderido();
-				return 'Light'
+				return planoMaisAderido();
 			case 'Ticket Médio':
 				return `R$ ${ticketMedio()},00`;
 			case 'Aulas grátis este mês':
