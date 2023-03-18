@@ -139,7 +139,7 @@ $ cd API-Tid
 **Clique 2x no ícone: API-Tid.sln**
 
 #Com o Visual Studio aberto
-**Clique na aba Depurar(Debug) / Iniciar Depuração(Start Debugging)
+**Clique na aba Depurar(Debug) / Iniciar Depuração(Start Debugging)**
 
 # O servidor inciará automaticamente e uma aba no chrome será aberta na porta:7147 - 
 
