@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Git\\Tid-Crud\\api\\API-Tid\\API-Tid\\API-Tid.csproj": {}
+    "C:\\Git\\Teste-Tid-Software-ReactJs-CSharp\\api\\API-Tid\\API-Tid\\API-Tid.csproj": {}
   },
   "projects": {
-    "C:\\Git\\Tid-Crud\\api\\API-Tid\\API-Tid\\API-Tid.csproj": {
+    "C:\\Git\\Teste-Tid-Software-ReactJs-CSharp\\api\\API-Tid\\API-Tid\\API-Tid.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Git\\Tid-Crud\\api\\API-Tid\\API-Tid\\API-Tid.csproj",
+        "projectUniqueName": "C:\\Git\\Teste-Tid-Software-ReactJs-CSharp\\api\\API-Tid\\API-Tid\\API-Tid.csproj",
         "projectName": "API-Tid",
-        "projectPath": "C:\\Git\\Tid-Crud\\api\\API-Tid\\API-Tid\\API-Tid.csproj",
+        "projectPath": "C:\\Git\\Teste-Tid-Software-ReactJs-CSharp\\api\\API-Tid\\API-Tid\\API-Tid.csproj",
         "packagesPath": "C:\\Users\\Thiago\\.nuget\\packages\\",
-        "outputPath": "C:\\Git\\Tid-Crud\\api\\API-Tid\\API-Tid\\obj\\",
+        "outputPath": "C:\\Git\\Teste-Tid-Software-ReactJs-CSharp\\api\\API-Tid\\API-Tid\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Thiago\\AppData\\Roaming\\NuGet\\NuGet.Config",

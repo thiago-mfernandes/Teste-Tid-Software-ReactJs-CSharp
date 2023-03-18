@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kM6jkP68KldUl85XPQBReWsyVHz1XK3qqrk3AvVO1JXQEdtAbZbKXs/9IOZfBLokc/psH7IobHRa72dnAIyb4g==",
+  "dgSpecHash": "d6/d7VbVVxLNNWNt4X97JvvqhDzFnggyOs8se+2xwCdP1xjslmRYKBfjw262dvAnRWYoeeKaouUPbJry58xAPw==",
   "success": true,
-  "projectFilePath": "C:\\Git\\Tid-Crud\\api\\API-Tid\\API-Tid\\API-Tid.csproj",
+  "projectFilePath": "C:\\Git\\Teste-Tid-Software-ReactJs-CSharp\\api\\API-Tid\\API-Tid\\API-Tid.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Thiago\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Thiago\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
