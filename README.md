@@ -10,7 +10,7 @@
 ## Índice
 <br />
 
-- <a href="#-sobre-o-projeto">Sobre</a>
+- <a href="#-sobre-o-teste">Sobre</a>
 - <a href="#-especificacoes">Especificações</a> 
 - <a href="#-layout">Layout</a>
 - <a href="#-como-executar-o-projeto">Como executar o projeto localmente</a>
@@ -28,13 +28,13 @@
 
 📍 Desenvolver um CRUD com as seguintes características: 
 
-🔎 Cadastro de dois tipos de entidades relacionadas, ficando a minha escolha quais seriam.;<br/>
+🔎 Cadastro de dois tipos de entidades relacionadas, ficando a minha escolha quais seriam;<br/>
 
 🤖 Tecnologias: HTML/CSS, ReactJS, C#<br/>
 
 ---
 
-🚨🚨🚨 Ficou quase tudo ao meu critério escolher. Fiz as seguintes escolhas:
+🚨🚨🚨 Ficou quase tudo ao meu critério escolher referente a interfaces e banco de dados. Fiz as seguintes escolhas:
 
 - [x] 👉 Optei por persistir os dados em SQL Server ;
 
@@ -46,7 +46,7 @@
 
 - [x] 👉 É possível pesquisar por nome;
 
-- [x] 👉 O painel administrativo possui 4 indicadores de desempenho;
+- [x] 👉 O painel administrativo possui 4 indicadores de desempenho de clientes e mais 4 diferentes para planos;
 
 
 --- 
@@ -64,7 +64,7 @@
 
 ## 🎨 Layout 
 
-Um layout foi desenvolvido por mim no figma como parâmetro para o desenvolvimento das interfaces e esta disponível:
+Um layout foi desenvolvido por mim no figma como parâmetro para o desenvolvimento das interfaces e esta disponível abaixo:
 
 <a href="https://www.figma.com/file/NEGl4syw4dFihihjOVhP1g/Untitled?node-id=0-1&t=ARYb8ce45GiV4JXc-0">
   <img alt="Made by thiago-fernandes" src="https://img.shields.io/badge/Acessar%20Layout%20-Figma-%2304D361">
@@ -74,68 +74,41 @@ Um layout foi desenvolvido por mim no figma como parâmetro para o desenvolvimen
 
 ## 📱 Mobile
 
-<div style="display:flex; flex-direction:column; align-items:center;">
-  <p style="color: #4EA8DE">Página Home</p>
-<img alt="" src="./Tid_Front/src/assets/mobile-home.png" width="200px">
-</div>
+<p align="center">
 
-<div style="display:flex; flex-direction:column; align-items:center;">
-  <p style="color: #4EA8DE">Pagina com os indicadores e a listagem de clientes</p>
-<img alt="" src="./Tid_Front/src/assets/mobile-clientes.png" width="200px">
-</div>
+  <img alt="" src="./Tid_Front/src/assets/mobile-home.png" width="200px">
+  <img alt="" src="./Tid_Front/src/assets/mobile-clientes.png" width="200px">
+  <img alt="" src="./Tid_Front/src/assets/mobile-cliente-id.png" width="200px">
+  <img alt="" src="./Tid_Front/src/assets/mobile-filtro.png" width="200px">
+  <img alt="" src="./Tid_Front/src/assets/mobile-adicionar-cliente.png" width="200px">
+  <img alt="" src="./Tid_Front/src/assets/mobile-editar-cliente.png" width="200px">
+  <img alt="" src="./Tid_Front/src/assets/mobile-excluir.png" width="200px">
+  <img alt="" src="./Tid_Front/src/assets/mobile-adicionar-plano.png" width="200px">
+   
+</p>
 
-<div style="display:flex; flex-direction:column; align-items:center;">
-  <p style="color: #4EA8DE">Tabela de clientes responsiva</p>
-<img alt="" src="./Tid_Front/src/assets/mobile-cliente-id.png" width="200px">
-</div>
-
-<div style="display:flex; flex-direction:column; align-items:center;">
-  <p style="color: #4EA8DE">Tabela exibindo resultado do filtro</p>
-<img alt="" src="./Tid_Front/src/assets/mobile-filtro.png" width="200px">
-</div>
-
-<div style="display:flex; flex-direction:column; align-items:center;">
-  <p style="color: #4EA8DE">Tela de cadastro de novo cliente</p>
-<img alt="" src="./Tid_Front/src/assets/mobile-adicionar-cliente.png" width="200px">
-</div>
-
-<div style="display:flex; flex-direction:column; align-items:center;">
-  <p style="color: #4EA8DE">Tela de edição dos dados do cliente</p>
-<img alt="" src="./Tid_Front/src/assets/mobile-editar-cliente.png" width="200px">
-</div>
-
-<div style="display:flex; flex-direction:column; align-items:center;">
-  <p style="color: #4EA8DE">Ao clicar no icone de deletar do plano ou do cliente, uma confirmação é requerida</p>
-<img alt="" src="./Tid_Front/src/assets/mobile-excluir.png" width="200px">
-</div>
-
-<div style="display:flex; flex-direction:column; align-items:center;">
-  <p style="color: #4EA8DE">Adicionar novo plano</p>
-<img alt="" src="./Tid_Front/src/assets/mobile-adicionar-plano.png" width="200px">
-</div>
-
-<div style="display:flex; flex-direction:column; align-items:center;">
-  <p style="color: #4EA8DE">Editar Plano</p>
-  <img alt="" src="./Tid_Front/src/assets/mobile-editar-plano.png" width="200px">
-</div>
-
---inserir um gif
 
 ### 💻 Web
 
 <p align="center">
 
-  <div style="display:flex; flex-direction:column; align-items:center;">
-    <p style="color: #4EA8DE">Editar Plano</p>
-    video
-  </div>  
+  ![tid-home-1](https://user-images.githubusercontent.com/91342038/226134342-1f9355fc-c4e2-47b5-8a89-b6584c84c30c.gif)
+  ![tid-contato-cliente-2](https://user-images.githubusercontent.com/91342038/226134348-fad44fd0-6a33-45b2-bb77-ae27ec4f9c9b.gif)
+  ![tid-cadastrar-cliente-3](https://user-images.githubusercontent.com/91342038/226134352-245f7993-13c9-42c4-995b-0ba3fb305386.gif)
+  ![tid-busca-exclusao-4](https://user-images.githubusercontent.com/91342038/226134357-afce370d-5795-4258-988b-984db57cb343.gif)
+  ![tid-editar-cliente-5](https://user-images.githubusercontent.com/91342038/226134372-776bb4ba-db23-4127-ba94-7b0e7a5efe80.gif)
+  ![tid-filtro-6](https://user-images.githubusercontent.com/91342038/226134404-3705c125-4600-42d9-9a84-ac1f60b87a7c.gif)
+  ![tid-plano-edicao-7](https://user-images.githubusercontent.com/91342038/226134424-92c6ef38-65cf-41c0-8df6-d579ccf79cb0.gif)
+  ![tid-plano-exclusao-8](https://user-images.githubusercontent.com/91342038/226134447-604cd048-298b-402b-ab2d-f63d22223704.gif)  
+  ![tid-plano-cadastro-9](https://user-images.githubusercontent.com/91342038/226134473-3015b11d-9312-4220-8bb5-95db8c869e7c.gif)
+
 </p>
 
 ---
 
 ## 🚀 Como executar o projeto
 
-Este projeto possui o Frontend e um Backend fake:
+Este projeto possui um Frontend e um Backend separados, além de um banco de Dados local:
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 
@@ -144,7 +117,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 Além disto, é bom ter um editor de código para trabalhar com o código como o [VSCode](https://code.visualstudio.com/) .
 
-Você tambem vai precisar do [Visual Studio 2022](https://visualstudio.microsoft.com/pt-br/vs/) para acessar e rodar os serviços da API
+Você tambem vai precisar do [Visual Studio 2022](https://visualstudio.microsoft.com/pt-br/vs/) para acessar e rodar os serviços da API.
 
 #### 🎲 Rodando o Backend 
 
